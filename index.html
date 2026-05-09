@@ -3,39 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Friendly Tech Concierge provides patient in-home technology support, setup, troubleshooting, and lessons for seniors, families, and everyday users in the Las Vegas Valley." />
-  <title>Friendly Tech Concierge | In-Home Tech Support in Las Vegas</title>
+  <title>Friendly Tech LV | Patient In-Home Tech Support in Las Vegas</title>
+  <meta name="description" content="Friendly, patient in-home tech support for seniors, families, and everyday users in Las Vegas. Help with computers, phones, Wi-Fi, printers, smart TVs, passwords, email, and tech lessons." />
   <style>
     :root {
-      --blue: #2563eb;
-      --blue-dark: #1d4ed8;
-      --navy: #102a43;
-      --sky: #eaf4ff;
-      --gold: #f4b942;
-      --green: #16a34a;
-      --text: #243447;
-      --muted: #5f6f82;
-      --soft: #f7fafc;
+      --primary: #1d4ed8;
+      --primary-dark: #1e40af;
+      --secondary: #eff6ff;
+      --accent: #f59e0b;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --light: #f9fafb;
       --white: #ffffff;
-      --border: #dbe5ef;
-      --shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
-      --radius: 22px;
+      --border: #e5e7eb;
+      --success: #047857;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background: var(--white);
       line-height: 1.6;
-      font-size: 18px;
+      font-size: 17px;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
       width: min(1120px, 92%);
@@ -43,282 +55,252 @@
     }
 
     .top-bar {
-      background: var(--navy);
-      color: white;
+      background: var(--primary-dark);
+      color: var(--white);
       font-size: 0.95rem;
-      padding: 9px 0;
+      padding: 0.55rem 0;
+      text-align: center;
     }
 
-    .top-bar .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+    .top-bar a {
+      font-weight: 700;
+      text-decoration: underline;
     }
 
     header {
-      background: rgba(255,255,255,0.96);
+      background: var(--white);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
+      z-index: 20;
     }
 
     .nav {
-      min-height: 86px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      gap: 24px;
+      padding: 1rem 0;
+      gap: 1rem;
     }
 
-    .brand {
+    .logo {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
+      flex-direction: column;
+      line-height: 1.1;
     }
 
-    .brand img {
-      height: 190px;
-      width: auto;
-      display: block;
+    .logo strong {
+      color: var(--primary-dark);
+      font-size: 1.15rem;
     }
 
-    .brand-text strong {
-      display: block;
-      color: var(--navy);
-      font-size: 1.05rem;
-    }
-
-    .brand-text span {
-      display: block;
+    .logo span {
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
-      font-size: 0.98rem;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      text-decoration: none;
+      gap: 1.25rem;
+      font-size: 0.95rem;
       color: var(--text);
     }
 
-    .button {
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      gap: 8px;
-      min-height: 48px;
-      padding: 12px 22px;
+      justify-content: center;
+      padding: 0.85rem 1.2rem;
       border-radius: 999px;
-      text-decoration: none;
-      font-weight: 800;
+      font-weight: 700;
       border: 2px solid transparent;
-      transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+      transition: 0.2s ease;
+      cursor: pointer;
+      text-align: center;
     }
 
-    .button:hover { transform: translateY(-1px); }
-
-    .primary {
-      background: var(--blue);
-      color: white;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
     }
 
-    .primary:hover { background: var(--blue-dark); }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+    }
 
-    .secondary {
-      background: white;
-      color: var(--blue-dark);
-      border-color: var(--border);
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary-dark);
+      border-color: var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--secondary);
     }
 
     .hero {
-      background: linear-gradient(135deg, #f7fbff 0%, #eaf4ff 55%, #ffffff 100%);
-      padding: 74px 0 58px;
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 60%);
+      padding: 5rem 0 4rem;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
-      gap: 42px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 3rem;
       align-items: center;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
+      display: inline-block;
+      color: var(--primary-dark);
+      background: #dbeafe;
+      padding: 0.4rem 0.75rem;
       border-radius: 999px;
-      background: white;
-      color: var(--blue-dark);
-      font-weight: 800;
-      font-size: 0.92rem;
-      border: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
     }
-
-    h1, h2, h3 { line-height: 1.15; color: var(--navy); margin: 0 0 16px; }
 
     h1 {
-      font-size: clamp(2.35rem, 5vw, 4.15rem);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      color: #111827;
+      margin-bottom: 1.1rem;
       letter-spacing: -0.04em;
-      margin-top: 20px;
     }
 
-    h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
-      letter-spacing: -0.025em;
-    }
-
-    h3 { font-size: 1.25rem; }
-
-    .lead {
-      font-size: 1.22rem;
-      color: var(--muted);
+    .hero p {
+      font-size: 1.2rem;
+      color: #374151;
       max-width: 680px;
-      margin-bottom: 28px;
+      margin-bottom: 1.4rem;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin: 24px 0;
+      gap: 0.85rem;
+      margin: 1.5rem 0;
     }
 
     .trust-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.4rem;
+      color: var(--muted);
+      font-size: 0.98rem;
     }
 
-    .trust-item {
-      background: rgba(255,255,255,0.78);
+    .trust-pill {
+      background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
-      font-size: 0.96rem;
-      font-weight: 700;
-      color: var(--navy);
+      border-radius: 999px;
+      padding: 0.5rem 0.75rem;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
     }
 
     .hero-card {
-      background: white;
-      border: 1px solid var(--border);
+      background: var(--white);
+      padding: 1.6rem;
       border-radius: var(--radius);
-      padding: 28px;
       box-shadow: var(--shadow);
+      border: 1px solid var(--border);
     }
 
-    .hero-card h2 { font-size: 1.7rem; }
-
-    .check-list {
-      list-style: none;
-      margin: 20px 0 0;
-      padding: 0;
+    .photo-placeholder {
+      background: linear-gradient(135deg, #dbeafe, #fef3c7);
+      border-radius: var(--radius);
+      min-height: 260px;
       display: grid;
-      gap: 12px;
+      place-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      color: #374151;
+      border: 2px dashed #93c5fd;
+      margin-bottom: 1.2rem;
     }
 
-    .check-list li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
     }
 
+    .hero-card li::before,
     .check-list li::before {
       content: "✓";
-      color: white;
-      background: var(--green);
+      color: var(--success);
       font-weight: 900;
-      width: 24px;
-      height: 24px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 24px;
-      font-size: 0.85rem;
-      margin-top: 2px;
+      margin-right: 0.5rem;
     }
 
-    section { padding: 72px 0; }
+    section {
+      padding: 4.25rem 0;
+    }
 
-    .section-intro {
+    section:nth-of-type(even) {
+      background: var(--light);
+    }
+
+    .section-heading {
       max-width: 760px;
-      margin-bottom: 34px;
+      margin-bottom: 2rem;
     }
 
-    .muted { color: var(--muted); }
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #111827;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 1.1rem;
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 1.1rem;
     }
 
     .card {
-      background: white;
+      background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: 0 8px 22px rgba(16, 42, 67, 0.06);
+      padding: 1.4rem;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
     }
 
-    .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--sky);
-      color: var(--blue-dark);
-      font-size: 1.45rem;
-      margin-bottom: 16px;
+    .card h3 {
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
     }
 
-    .soft { background: var(--soft); }
-
-    .pricing-card {
-      position: relative;
-      overflow: hidden;
+    .card p,
+    .card li {
+      color: #4b5563;
     }
 
-    .price {
-      font-size: 2.5rem;
-      line-height: 1;
-      font-weight: 900;
-      color: var(--navy);
-      margin: 10px 0 8px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #fff7df;
-      color: #8a5c00;
-      border: 1px solid #f3d37a;
-      padding: 6px 11px;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 800;
-      margin-bottom: 14px;
+    .card ul {
+      margin-top: 0.65rem;
+      padding-left: 1.1rem;
     }
 
     .steps {
@@ -326,117 +308,201 @@
     }
 
     .step {
-      display: grid;
-      grid-template-columns: 54px 1fr;
-      gap: 16px;
-      align-items: start;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--border);
+      position: relative;
+      padding-left: 4.2rem;
     }
-
-    .step:last-child { border-bottom: 0; }
 
     .step::before {
       counter-increment: step;
       content: counter(step);
-      width: 46px;
-      height: 46px;
-      border-radius: 999px;
-      background: var(--blue);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-    }
-
-    .cta {
-      background: linear-gradient(135deg, var(--navy), #1d4ed8);
-      color: white;
-      border-radius: 30px;
-      padding: 42px;
+      position: absolute;
+      left: 1.2rem;
+      top: 1.2rem;
+      width: 2.2rem;
+      height: 2.2rem;
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .cta h2, .cta p { color: white; }
-    .cta p { margin: 0; opacity: 0.9; }
-
-    .contact-box {
-      background: white;
-      border-radius: var(--radius);
-      padding: 28px;
-      border: 1px solid var(--border);
-    }
-
-    .contact-row {
-      display: grid;
-      gap: 14px;
-      margin-top: 20px;
-    }
-
-    .contact-row a {
-      display: block;
-      background: var(--soft);
-      border: 1px solid var(--border);
-      padding: 16px;
-      border-radius: 14px;
-      text-decoration: none;
+      place-items: center;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
       font-weight: 800;
-      color: var(--navy);
+    }
+
+    .pricing-card {
+      border: 2px solid #bfdbfe;
+      background: linear-gradient(180deg, #ffffff, #eff6ff);
+    }
+
+    .price {
+      font-size: 2.4rem;
+      color: #111827;
+      font-weight: 900;
+      margin: 0.5rem 0;
+    }
+
+    .price span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .note {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .testimonial {
+      font-style: italic;
+      color: #374151;
+    }
+
+    .testimonial strong {
+      display: block;
+      margin-top: 1rem;
+      color: #111827;
+      font-style: normal;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 0;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      color: #111827;
+      margin-bottom: 0.35rem;
+    }
+
+    .cta-band {
+      background: var(--primary-dark);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .cta-band h2 {
+      font-size: 2rem;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-band p {
+      color: #dbeafe;
     }
 
     footer {
-      background: var(--navy);
-      color: white;
-      padding: 34px 0;
-      font-size: 0.95rem;
+      background: #111827;
+      color: var(--white);
+      padding: 3rem 0 6rem;
     }
 
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2rem;
+    }
+
+    footer p,
+    footer li {
+      color: #d1d5db;
+    }
+
+    footer ul {
+      list-style: none;
+      margin-top: 0.8rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 0.75rem;
+      box-shadow: 0 -8px 24px rgba(15, 23, 42, 0.12);
+      gap: 0.6rem;
+    }
+
+    .mobile-cta a {
+      flex: 1;
+      padding: 0.85rem;
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .mobile-call {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .mobile-text {
+      background: #fef3c7;
+      color: #92400e;
     }
 
     @media (max-width: 860px) {
-      .nav { align-items: flex-start; padding: 12px 0; }
-      .nav-links { display: none; }
-      .hero-grid, .grid-3, .grid-2, .cta { grid-template-columns: 1fr; }
-      .trust-row { grid-template-columns: 1fr; }
-      .brand img { height: 64px; }
-      .hero { padding-top: 42px; }
-      section { padding: 54px 0; }
-      .cta { padding: 30px; }
+      .hero-grid,
+      .grid-3,
+      .grid-2,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .cta-band {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mobile-cta {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
   <div class="top-bar">
-    <div class="container">
-      <span>Las Vegas Valley in-home tech support</span>
-      <span>Weekend and limited evening appointments available</span>
-    </div>
+    Las Vegas Valley in-home tech help · <a href="tel:7025709003">Call/Text (702) 570-9003</a>
   </div>
 
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Friendly Tech Concierge home">
-        <img src="Friendly Tech Concierge Logo.png" alt="Friendly Tech Concierge logo" />
-        <span class="brand-text">
-          <strong>Friendly Tech Concierge</strong>
-          <span>Patient tech help at home</span>
-        </span>
+      <a href="#top" class="logo" aria-label="Friendly Tech LV home">
+        <strong>Friendly Tech LV</strong>
+        <span>Patient in-home technology help</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
+        <a href="#how-it-works">How It Works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#process">How It Works</a>
-        <a href="#contact">Contact</a>
-        <a class="button primary" href="tel:17025709003">Call / Text</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary">Request Help</a>
       </nav>
     </div>
   </header>
@@ -445,27 +511,33 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Friendly, calm, in-home technology help</span>
-          <h1>Tech support that makes people feel comfortable, not embarrassed.</h1>
-          <p class="lead">Friendly Tech Concierge helps seniors, families, and everyday users in the Las Vegas Valley with computers, phones, tablets, Wi-Fi, printers, smart TVs, email, passwords, and technology lessons.</p>
+          <span class="eyebrow">Serving seniors, families, and everyday users</span>
+          <h1>Patient In-Home Tech Support in Las Vegas</h1>
+          <p>Friendly Tech LV helps with computers, phones, tablets, Wi‑Fi, printers, smart TVs, passwords, email, and everyday technology problems — explained clearly and respectfully.</p>
           <div class="hero-actions">
-            <a class="button primary" href="tel:17025709003">Call or Text (702) 570-9003</a>
-            <a class="button secondary" href="#appointment-request">Request an Appointment</a>
+            <a class="btn btn-primary" href="tel:7025709003">Call Now</a>
+            <a class="btn btn-secondary" href="sms:7025709003">Text for Help</a>
+            <a class="btn btn-secondary" href="#services">See Services</a>
           </div>
           <div class="trust-row" aria-label="Trust highlights">
-            <div class="trust-item">Patient explanations</div>
-            <div class="trust-item">In-home convenience</div>
-            <div class="trust-item">No confusing tech talk</div>
+            <span class="trust-pill">No confusing jargon</span>
+            <span class="trust-pill">Calm, respectful help</span>
+            <span class="trust-pill">Weekend & limited evening visits</span>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Common problems solved">
-          <h2>We can help with:</h2>
-          <ul class="check-list">
-            <li>New phone, tablet, or computer setup</li>
-            <li>Wi-Fi, printer, and smart TV troubleshooting</li>
-            <li>Email, password, photo, and app help</li>
-            <li>Slow computer cleanup and basic virus checks</li>
-            <li>One-on-one lessons for seniors and beginners</li>
+
+        <aside class="hero-card" aria-label="Service highlights">
+          <div class="photo-placeholder">
+            <div>
+              <strong>Add your photo here</strong><br />
+              A friendly headshot or photo helping someone with a laptop will build trust quickly.
+            </div>
+          </div>
+          <ul>
+            <li>Computer, phone, and tablet setup</li>
+            <li>Wi‑Fi and printer troubleshooting</li>
+            <li>Smart TV, Roku, and Fire Stick help</li>
+            <li>Password, email, and scam-safety guidance</li>
           </ul>
         </aside>
       </div>
@@ -473,207 +545,244 @@
 
     <section id="services">
       <div class="container">
-        <div class="section-intro">
-          <h2>Practical help for the technology you use every day.</h2>
-          <p class="muted">The goal is not just to fix the problem. It is to help you understand what happened, feel safer using your devices, and know what to do next.</p>
+        <div class="section-heading">
+          <h2>Friendly, Professional Technology Help</h2>
+          <p>Support for the everyday technology issues that interrupt home life, work, entertainment, and communication with family.</p>
         </div>
+
         <div class="grid-3">
           <article class="card">
-            <div class="icon">💻</div>
-            <h3>Computer Help</h3>
-            <p>Setup, troubleshooting, updates, slow computer checks, cleanup, software help, and basic hardware troubleshooting.</p>
+            <h3>Device Setup</h3>
+            <p>Get new devices working and connected properly.</p>
+            <ul>
+              <li>Computers and laptops</li>
+              <li>Phones and tablets</li>
+              <li>Printers and scanners</li>
+              <li>Smart TVs and streaming devices</li>
+            </ul>
           </article>
+
           <article class="card">
-            <div class="icon">📱</div>
-            <h3>Phone & Tablet Help</h3>
-            <p>New device setup, apps, contacts, photos, email, settings, accessibility options, and patient step-by-step training.</p>
+            <h3>Wi‑Fi & Home Network Help</h3>
+            <p>Troubleshooting for frustrating connection issues.</p>
+            <ul>
+              <li>Slow or unreliable Wi‑Fi</li>
+              <li>Router and modem support</li>
+              <li>Printer connection issues</li>
+              <li>Device connectivity problems</li>
+            </ul>
           </article>
+
           <article class="card">
-            <div class="icon">📶</div>
-            <h3>Wi-Fi & Printer Support</h3>
-            <p>Home Wi-Fi troubleshooting, printer connection issues, wireless printing, router basics, and network guidance.</p>
+            <h3>Email, Passwords & Accounts</h3>
+            <p>Clear help with common account problems.</p>
+            <ul>
+              <li>Email setup</li>
+              <li>Password reset guidance</li>
+              <li>Account recovery help</li>
+              <li>Basic online safety education</li>
+            </ul>
           </article>
+
           <article class="card">
-            <div class="icon">📺</div>
-            <h3>Smart TV & Streaming</h3>
-            <p>Roku, Fire Stick, smart TV setup, streaming app sign-in, remote help, and simple usage walkthroughs.</p>
-          </article>
-          <article class="card">
-            <div class="icon">🔐</div>
-            <h3>Email & Password Help</h3>
-            <p>Email setup, password organization guidance, account recovery support, and safer sign-in habits.</p>
-          </article>
-          <article class="card">
-            <div class="icon">👵</div>
             <h3>Senior Tech Lessons</h3>
-            <p>Friendly lessons on texting, video calls, photos, online safety, scam awareness, apps, and everyday device use.</p>
+            <p>Patient one-on-one technology coaching.</p>
+            <ul>
+              <li>iPhone and Android basics</li>
+              <li>Texting and photos</li>
+              <li>Video calls with family</li>
+              <li>Smart TV and streaming basics</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Computer Cleanup</h3>
+            <p>Help with slow, cluttered, or confusing computers.</p>
+            <ul>
+              <li>Software cleanup</li>
+              <li>Updates and basic maintenance</li>
+              <li>Virus and malware checks</li>
+              <li>General troubleshooting</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Scam Prevention Help</h3>
+            <p>Guidance for suspicious popups, emails, calls, and messages.</p>
+            <ul>
+              <li>Fake virus popup guidance</li>
+              <li>Suspicious email review</li>
+              <li>Password safety basics</li>
+              <li>Safer browsing habits</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="soft" id="pricing">
+    <section id="how-it-works">
       <div class="container">
-        <div class="section-intro">
-          <h2>Simple starting pricing.</h2>
-          <p class="muted">Clear pricing helps avoid surprises. Final cost depends on the type of help needed, visit length, and location.</p>
+        <div class="section-heading">
+          <h2>How It Works</h2>
+          <p>Simple, clear, and low-pressure from the first call to the completed visit.</p>
         </div>
+
+        <div class="grid-3 steps">
+          <article class="card step">
+            <h3>Call or Text</h3>
+            <p>Tell us what issue you are having and what devices are involved.</p>
+          </article>
+          <article class="card step">
+            <h3>Schedule a Visit</h3>
+            <p>We schedule an in-home appointment during available weekend or limited evening hours.</p>
+          </article>
+          <article class="card step">
+            <h3>Get Patient Help</h3>
+            <p>We troubleshoot the issue, explain what happened, and help you feel more confident using your technology.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container grid-2">
+        <div>
+          <div class="section-heading">
+            <h2>Technology Help You Can Feel Comfortable With</h2>
+            <p>Friendly Tech LV is built around patience, respect, and clear explanations — especially for seniors and families who want a trustworthy person helping in the home.</p>
+          </div>
+          <a class="btn btn-primary" href="tel:7025709003">Call/Text (702) 570-9003</a>
+        </div>
+
+        <div class="card">
+          <h3>Why Families Call Friendly Tech LV</h3>
+          <ul class="check-list">
+            <li>Patient, respectful support</li>
+            <li>Clear explanations without embarrassment</li>
+            <li>Honest recommendations</li>
+            <li>No pressure or confusing upsells</li>
+            <li>Help with the everyday tech people actually use</li>
+            <li>Local Las Vegas Valley service</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Simple Starting Pricing</h2>
+          <p>Transparent starting pricing helps you know what to expect before scheduling.</p>
+        </div>
+
         <div class="grid-3">
           <article class="card pricing-card">
-            <span class="badge">Most common</span>
             <h3>In-Home Tech Visit</h3>
-            <div class="price">$85+</div>
-            <p class="muted">Great for setup, troubleshooting, and one-time support needs.</p>
-            <ul class="check-list">
-              <li>In-home appointment</li>
-              <li>Patient explanation</li>
-              <li>Helpful next steps</li>
-            </ul>
+            <div class="price">$85 <span>starting at</span></div>
+            <p>For common home technology troubleshooting, setup, and support.</p>
+            <p class="note">Final price may vary based on issue complexity, travel distance, or extended appointment time.</p>
           </article>
-          <article class="card pricing-card">
-            <h3>Tech Lesson Visit</h3>
-            <div class="price">$85+</div>
-            <p class="muted">Best for seniors or beginners who want calm, hands-on learning.</p>
-            <ul class="check-list">
-              <li>Go at your pace</li>
-              <li>Practice together</li>
-              <li>Written notes when helpful</li>
-            </ul>
+
+          <article class="card">
+            <h3>Senior Tech Lesson</h3>
+            <div class="price">$85 <span>starting at</span></div>
+            <p>Patient one-on-one help learning phones, tablets, computers, video calls, email, photos, or smart TV basics.</p>
           </article>
-          <article class="card pricing-card">
+
+          <article class="card">
             <h3>Multi-Issue Visit</h3>
-            <div class="price">Quote</div>
-            <p class="muted">For multiple devices, larger setups, or longer troubleshooting appointments.</p>
-            <ul class="check-list">
-              <li>Prioritized task list</li>
-              <li>Efficient visit plan</li>
-              <li>Clear expectations first</li>
-            </ul>
+            <div class="price">Ask <span>for estimate</span></div>
+            <p>Best when you have several devices or a longer checklist of technology problems to work through.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="process">
-      <div class="container grid-2">
-        <div>
-          <h2>How appointments work.</h2>
-          <p class="muted">A calm process makes tech problems less stressful, especially for clients who feel overwhelmed or have had bad support experiences before.</p>
+    <section id="service-area">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Serving the Las Vegas Valley</h2>
+          <p>In-home appointments are available within the local service area, including Las Vegas and nearby communities.</p>
         </div>
-        <div class="card steps">
-          <div class="step">
-            <div>
-              <h3>Call or text</h3>
-              <p>Describe what is going on and which devices need help.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div>
-              <h3>Schedule a visit</h3>
-              <p>Weekend and limited evening appointments are available in the Las Vegas Valley.</p>
-            </div>
-          </div>
-          <div class="step">
-            <div>
-              <h3>Get patient help at home</h3>
-              <p>Your issue is handled clearly, respectfully, and without confusing technical language.</p>
-            </div>
-          </div>
+
+        <div class="grid-3">
+          <div class="card"><h3>Las Vegas</h3><p>Central, southwest, northwest, and nearby neighborhoods.</p></div>
+          <div class="card"><h3>Summerlin & Spring Valley</h3><p>Friendly in-home support for common household tech issues.</p></div>
+          <div class="card"><h3>Henderson & North Las Vegas</h3><p>Availability may depend on scheduling and travel distance.</p></div>
         </div>
       </div>
     </section>
 
-    <section class="soft">
-      <div class="container grid-2">
-        <div class="card">
-          <h2>Built for seniors and families.</h2>
-          <p>Many people delay asking for tech help because they are afraid of feeling judged. Friendly Tech Concierge is different: patient, respectful, and focused on helping clients feel more confident.</p>
-          <ul class="check-list">
-            <li>No rushed explanations</li>
-            <li>No embarrassment about basic questions</li>
-            <li>Clear guidance for safer technology use</li>
-          </ul>
+    <section id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What Clients Appreciate</h2>
+          <p>Replace these sample testimonials with real client reviews as soon as you collect them.</p>
         </div>
-        <div class="card">
-          <h2>Safety-minded support.</h2>
-          <p>Technology problems often involve personal accounts, passwords, and private information. The service is designed around professionalism, trust, and common-sense privacy.</p>
-          <ul class="check-list">
-            <li>You stay involved with account access</li>
-            <li>Scam and suspicious message awareness</li>
-            <li>Simple recommendations without pressure</li>
-          </ul>
+
+        <div class="grid-3">
+          <article class="card testimonial">
+            “Very patient and explained everything in a way that made sense.”
+            <strong>— Sample Review</strong>
+          </article>
+          <article class="card testimonial">
+            “Helped get my printer, email, and phone working without making me feel embarrassed.”
+            <strong>— Sample Review</strong>
+          </article>
+          <article class="card testimonial">
+            “A great option for families who need someone trustworthy to help a parent with technology.”
+            <strong>— Sample Review</strong>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="appointment-request" class="soft">
-      <div class="container grid-2">
-        <div>
-          <h2>Request an appointment.</h2>
-          <p class="muted">Use this form to describe what you need help with. Friendly Tech Concierge will follow up by call or text to confirm availability, pricing, and appointment details.</p>
-          <ul class="check-list">
-            <li>Please do not include passwords in this form.</li>
-            <li>Weekend and limited evening appointments are available.</li>
-            <li>Service is available in the Las Vegas Valley.</li>
-          </ul>
+    <section id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently Asked Questions</h2>
+          <p>Answers to common questions before scheduling an in-home tech visit.</p>
         </div>
-        <form class="card" action="https://formspree.io/f/xqengaby" method="POST">
-          <h3>Appointment Request Form</h3>
-          <input type="hidden" name="_subject" value="New Friendly Tech Concierge Appointment Request" />
 
-          <label for="name"><strong>Name</strong></label>
-          <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
-
-          <label for="phone"><strong>Phone number</strong></label>
-          <input id="phone" name="phone" type="tel" required placeholder="Best phone number" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
-
-          <label for="email"><strong>Email address</strong></label>
-          <input id="email" name="email" type="email" placeholder="Optional email" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
-
-          <label for="service"><strong>What do you need help with?</strong></label>
-          <select id="service" name="service" required style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;background:white;">
-            <option value="">Select one</option>
-            <option>Phone or tablet help</option>
-            <option>Computer help</option>
-            <option>Printer setup or troubleshooting</option>
-            <option>Wi-Fi troubleshooting</option>
-            <option>Smart TV / Roku / Fire Stick</option>
-            <option>Email or password help</option>
-            <option>Senior technology lesson</option>
-            <option>Multiple issues</option>
-          </select>
-
-          <label for="message"><strong>Briefly describe the issue</strong></label>
-          <textarea id="message" name="message" required rows="5" placeholder="Example: My printer will not connect to Wi-Fi, or I need help setting up a new iPhone." style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;font-family:Arial, Helvetica, sans-serif;"></textarea>
-
-          <label for="availability"><strong>Preferred appointment time</strong></label>
-          <input id="availability" name="availability" type="text" placeholder="Example: Saturday morning or weekday evening" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
-
-          <label for="zip"><strong>ZIP code</strong></label>
-          <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="Your ZIP code" style="width:100%;padding:14px;margin:8px 0 18px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
-
-          <button class="button primary" type="submit" style="width:100%;border:0;cursor:pointer;font-size:1rem;">Submit Appointment Request</button>
-          <p class="muted" style="font-size:0.92rem;margin-top:14px;">By submitting this form, you are requesting a follow-up. Your appointment is not confirmed until Friendly Tech Concierge contacts you.</p>
-        </form>
+        <div class="card">
+          <div class="faq-item">
+            <h3>Do you come to my home?</h3>
+            <p>Yes. Friendly Tech LV provides in-home technology support in the Las Vegas Valley service area.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can family members schedule for a parent?</h3>
+            <p>Yes. Adult children and family members can call or text to help arrange support for a loved one.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you help with iPhones, Android phones, tablets, Macs, and PCs?</h3>
+            <p>Yes. We help with common setup, troubleshooting, basic training, and everyday use across many personal devices.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Can you help with passwords?</h3>
+            <p>Yes, we can guide password resets and account recovery steps. For your safety, you should never share private passwords by text or email.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you repair broken phone or laptop screens?</h3>
+            <p>No. Friendly Tech LV focuses on setup, troubleshooting, education, software support, connectivity, and everyday technology help.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if the issue cannot be fixed during the visit?</h3>
+            <p>We will explain what was found, recommend next steps, and help you understand whether a replacement, provider support, or specialist repair is needed.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <div class="container">
-        <div class="cta">
+        <div class="cta-band">
           <div>
-            <h2>Need help with a device, printer, Wi-Fi, email, or smart TV?</h2>
-            <p>Call or text to request an appointment in the Las Vegas Valley.</p>
+            <h2>Need friendly help with technology?</h2>
+            <p>Call or text to request an appointment. Weekend and limited evening availability.</p>
           </div>
-          <a class="button secondary" href="tel:17025709003">Call / Text Now</a>
-        </div>
-        <div style="height: 28px"></div>
-        <div class="contact-box">
-          <h2>Contact Friendly Tech Concierge</h2>
-          <p class="muted">Share what device you need help with, what problem you are seeing, and your preferred appointment window.</p>
-          <div class="contact-row">
-            <a href="tel:17025709003">Phone: (702) 570-9003</a>
-            <a href="mailto:help@friendlytechlv.com">Email: help@friendlytechlv.com</a>
+          <div class="hero-actions">
+            <a class="btn btn-secondary" href="tel:7025709003">Call Now</a>
+            <a class="btn btn-secondary" href="sms:7025709003">Text Now</a>
           </div>
         </div>
       </div>
@@ -681,10 +790,34 @@
   </main>
 
   <footer>
-    <div class="container">
-      <span>© 2026 Friendly Tech Concierge • Las Vegas, Nevada</span>
-      <span>Patient in-home tech support for seniors, families, and everyday users.</span>
+    <div class="container footer-grid">
+      <div>
+        <h2>Friendly Tech LV</h2>
+        <p>Patient in-home technology support for seniors, families, and everyday users throughout the Las Vegas Valley.</p>
+        <ul>
+          <li>Phone/Text: <a href="tel:7025709003">(702) 570-9003</a></li>
+          <li>Email: <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Popular Services</h3>
+        <ul>
+          <li>Computer setup and troubleshooting</li>
+          <li>Phone and tablet help</li>
+          <li>Wi‑Fi and printer support</li>
+          <li>Smart TV and streaming setup</li>
+          <li>Senior technology lessons</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 2rem; color: #9ca3af; font-size: 0.9rem;">
+      © 2026 Friendly Tech LV • Las Vegas, Nevada
     </div>
   </footer>
+
+  <div class="mobile-cta" aria-label="Mobile contact buttons">
+    <a class="mobile-call" href="tel:7025709003">Call</a>
+    <a class="mobile-text" href="sms:7025709003">Text</a>
+  </div>
 </body>
 </html>
