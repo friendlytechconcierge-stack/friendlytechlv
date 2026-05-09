@@ -11,6 +11,7 @@
       --blue-dark: #1d4ed8;
       --navy: #102a43;
       --sky: #eaf4ff;
+      --gold: #f4b942;
       --green: #16a34a;
       --text: #243447;
       --muted: #5f6f82;
@@ -22,6 +23,7 @@
     }
 
     * { box-sizing: border-box; }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -34,6 +36,8 @@
     }
 
     a { color: inherit; }
+
+    img { max-width: 100%; }
 
     .container {
       width: min(1120px, 92%);
@@ -96,6 +100,8 @@
       color: var(--text);
     }
 
+    .mobile-header-action { display: none; }
+
     .button {
       display: inline-flex;
       justify-content: center;
@@ -107,10 +113,17 @@
       text-decoration: none;
       font-weight: 800;
       border: 2px solid transparent;
-      transition: transform 0.15s ease, background 0.15s ease;
+      transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+      cursor: pointer;
+      font-size: 1rem;
+      font-family: inherit;
     }
 
     .button:hover { transform: translateY(-1px); }
+    .button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline-offset: 3px;
+    }
 
     .primary {
       background: var(--blue);
@@ -151,11 +164,7 @@
       border: 1px solid var(--border);
     }
 
-    h1, h2, h3 {
-      line-height: 1.15;
-      color: var(--navy);
-      margin: 0 0 16px;
-    }
+    h1, h2, h3 { line-height: 1.15; color: var(--navy); margin: 0 0 16px; }
 
     h1 {
       font-size: clamp(2.35rem, 5vw, 4.15rem);
@@ -337,6 +346,38 @@
       font-weight: 900;
     }
 
+    .appointment-note {
+      background: #fff7df;
+      border: 1px solid #f3d37a;
+      color: #6d4b00;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-top: 18px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      margin: 0 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      background: white;
+      color: var(--text);
+    }
+
+    textarea { resize: vertical; }
+
+    .form-submit { width: 100%; border: 0; }
+
     .cta {
       background: linear-gradient(135deg, var(--navy), #1d4ed8);
       color: white;
@@ -390,14 +431,25 @@
     }
 
     @media (max-width: 860px) {
-      .nav { align-items: flex-start; padding: 12px 0; }
+      body { font-size: 17px; }
+      .top-bar { font-size: 0.88rem; }
+      .nav { min-height: 76px; padding: 10px 0; }
       .nav-links { display: none; }
+      .mobile-header-action { display: inline-flex; padding: 10px 16px; min-height: 42px; font-size: 0.92rem; }
+      .brand img { height: 62px; }
+      .hero { padding: 42px 0 48px; }
       .hero-grid, .grid-3, .grid-2, .cta { grid-template-columns: 1fr; }
       .trust-row { grid-template-columns: 1fr; }
-      .brand img { height: 64px; }
-      .hero { padding-top: 42px; }
+      .hero-actions .button { width: 100%; }
       section { padding: 54px 0; }
       .cta { padding: 30px; }
+      footer .container { display: grid; }
+    }
+
+    @media (max-width: 420px) {
+      .brand img { height: 54px; }
+      .mobile-header-action { padding: 9px 12px; font-size: 0.86rem; }
+      h1 { font-size: 2.18rem; }
     }
   </style>
 </head>
@@ -418,9 +470,11 @@
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">How It Works</a>
+        <a href="#appointment-request">Appointment</a>
         <a href="#contact">Contact</a>
         <a class="button primary" href="tel:17025709003">Call / Text</a>
       </nav>
+      <a class="button primary mobile-header-action" href="tel:17025709003">Call / Text</a>
     </div>
   </header>
 
@@ -435,14 +489,13 @@
             <a class="button primary" href="tel:17025709003">Call or Text (702) 570-9003</a>
             <a class="button secondary" href="#appointment-request">Request an Appointment</a>
           </div>
-          <div class="trust-row">
+          <div class="trust-row" aria-label="Trust highlights">
             <div class="trust-item">Patient explanations</div>
             <div class="trust-item">In-home convenience</div>
             <div class="trust-item">No confusing tech talk</div>
           </div>
         </div>
-
-        <aside class="hero-card">
+        <aside class="hero-card" aria-label="Common problems solved">
           <h2>We can help with:</h2>
           <ul class="check-list">
             <li>New phone, tablet, or computer setup</li>
@@ -454,6 +507,222 @@
         </aside>
       </div>
     </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Practical help for the technology you use every day.</h2>
+          <p class="muted">The goal is not just to fix the problem. It is to help you understand what happened, feel safer using your devices, and know what to do next.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">💻</div>
+            <h3>Computer Help</h3>
+            <p>Setup, troubleshooting, updates, slow computer checks, cleanup, software help, and basic hardware troubleshooting.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>Phone & Tablet Help</h3>
+            <p>New device setup, apps, contacts, photos, email, settings, accessibility options, and patient step-by-step training.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📶</div>
+            <h3>Wi-Fi & Printer Support</h3>
+            <p>Home Wi-Fi troubleshooting, printer connection issues, wireless printing, router basics, and network guidance.</p>
+          </article>
+          <article class="card">
+            <div class="icon">📺</div>
+            <h3>Smart TV & Streaming</h3>
+            <p>Roku, Fire Stick, smart TV setup, streaming app sign-in, remote help, and simple usage walkthroughs.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🔐</div>
+            <h3>Email & Password Help</h3>
+            <p>Email setup, password organization guidance, account recovery support, and safer sign-in habits.</p>
+          </article>
+          <article class="card">
+            <div class="icon">👵</div>
+            <h3>Senior Tech Lessons</h3>
+            <p>Friendly lessons on texting, video calls, photos, online safety, scam awareness, apps, and everyday device use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft" id="pricing">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Simple starting pricing.</h2>
+          <p class="muted">Clear pricing helps avoid surprises. Final cost depends on the type of help needed, visit length, and location.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card pricing-card">
+            <span class="badge">Most common</span>
+            <h3>In-Home Tech Visit</h3>
+            <div class="price">$85+</div>
+            <p class="muted">Great for setup, troubleshooting, and one-time support needs.</p>
+            <ul class="check-list">
+              <li>In-home appointment</li>
+              <li>Patient explanation</li>
+              <li>Helpful next steps</li>
+            </ul>
+          </article>
+          <article class="card pricing-card">
+            <h3>Tech Lesson Visit</h3>
+            <div class="price">$85+</div>
+            <p class="muted">Best for seniors or beginners who want calm, hands-on learning.</p>
+            <ul class="check-list">
+              <li>Go at your pace</li>
+              <li>Practice together</li>
+              <li>Written notes when helpful</li>
+            </ul>
+          </article>
+          <article class="card pricing-card">
+            <h3>Multi-Issue Visit</h3>
+            <div class="price">Quote</div>
+            <p class="muted">For multiple devices, larger setups, or longer troubleshooting appointments.</p>
+            <ul class="check-list">
+              <li>Prioritized task list</li>
+              <li>Efficient visit plan</li>
+              <li>Clear expectations first</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container grid-2">
+        <div>
+          <h2>How appointments work.</h2>
+          <p class="muted">A calm process makes tech problems less stressful, especially for clients who feel overwhelmed or have had bad support experiences before.</p>
+        </div>
+        <div class="card steps">
+          <div class="step">
+            <div>
+              <h3>Call, text, or request online</h3>
+              <p>Describe what is going on and which devices need help.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Confirm the visit</h3>
+              <p>Availability, service area, pricing, and appointment details are confirmed before the visit.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Get patient help at home</h3>
+              <p>Your issue is handled clearly, respectfully, and without confusing technical language.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="container grid-2">
+        <div class="card">
+          <h2>Built for seniors and families.</h2>
+          <p>Many people delay asking for tech help because they are afraid of feeling judged. Friendly Tech Concierge is different: patient, respectful, and focused on helping clients feel more confident.</p>
+          <ul class="check-list">
+            <li>No rushed explanations</li>
+            <li>No embarrassment about basic questions</li>
+            <li>Clear guidance for safer technology use</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Safety-minded support.</h2>
+          <p>Technology problems often involve personal accounts, passwords, and private information. The service is designed around professionalism, trust, and common-sense privacy.</p>
+          <ul class="check-list">
+            <li>You stay involved with account access</li>
+            <li>Scam and suspicious message awareness</li>
+            <li>Simple recommendations without pressure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="appointment-request">
+      <div class="container grid-2">
+        <div>
+          <h2>Request an appointment.</h2>
+          <p class="muted">Use this form to describe what you need help with. Friendly Tech Concierge will follow up by call or text to confirm availability, pricing, and appointment details.</p>
+          <ul class="check-list">
+            <li>Please do not include passwords in this form.</li>
+            <li>Weekend and limited evening appointments are available.</li>
+            <li>Service is available in the Las Vegas Valley.</li>
+          </ul>
+          <div class="appointment-note">Your appointment is not confirmed until you receive a follow-up call or text.</div>
+        </div>
+        <form class="card" action="https://formspree.io/f/xqengaby" method="POST">
+          <h3>Appointment Request Form</h3>
+          <input type="hidden" name="_subject" value="New Friendly Tech Concierge Appointment Request" />
+
+          <label for="name"><strong>Name</strong></label>
+          <input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+
+          <label for="phone"><strong>Phone number</strong></label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="Best phone number" />
+
+          <label for="email"><strong>Email address</strong></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="Optional email" />
+
+          <label for="service"><strong>What do you need help with?</strong></label>
+          <select id="service" name="service" required>
+            <option value="">Select one</option>
+            <option>Phone or tablet help</option>
+            <option>Computer help</option>
+            <option>Printer setup or troubleshooting</option>
+            <option>Wi-Fi troubleshooting</option>
+            <option>Smart TV / Roku / Fire Stick</option>
+            <option>Email or password help</option>
+            <option>Senior technology lesson</option>
+            <option>Multiple issues</option>
+          </select>
+
+          <label for="message"><strong>Briefly describe the issue</strong></label>
+          <textarea id="message" name="message" required rows="5" placeholder="Example: My printer will not connect to Wi-Fi, or I need help setting up a new iPhone."></textarea>
+
+          <label for="availability"><strong>Preferred appointment time</strong></label>
+          <input id="availability" name="availability" type="text" placeholder="Example: Saturday morning or weekday evening" />
+
+          <label for="zip"><strong>ZIP code</strong></label>
+          <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="Your ZIP code" />
+
+          <button class="button primary form-submit" type="submit">Submit Appointment Request</button>
+          <p class="muted" style="font-size:0.92rem;margin-top:14px;">By submitting this form, you are requesting a follow-up. Your appointment is not confirmed until Friendly Tech Concierge contacts you.</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="soft">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Need help with a device, printer, Wi-Fi, email, or smart TV?</h2>
+            <p>Call or text to request an appointment in the Las Vegas Valley.</p>
+          </div>
+          <a class="button secondary" href="tel:17025709003">Call / Text Now</a>
+        </div>
+        <div style="height: 28px"></div>
+        <div class="contact-box">
+          <h2>Contact Friendly Tech Concierge</h2>
+          <p class="muted">Share what device you need help with, what problem you are seeing, and your preferred appointment window.</p>
+          <div class="contact-row">
+            <a href="tel:17025709003">Phone: (702) 570-9003</a>
+            <a href="mailto:help@friendlytechlv.com">Email: help@friendlytechlv.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Friendly Tech Concierge • Las Vegas, Nevada</span>
+      <span>Patient in-home tech support for seniors, families, and everyday users.</span>
+    </div>
+  </footer>
 </body>
 </html>
