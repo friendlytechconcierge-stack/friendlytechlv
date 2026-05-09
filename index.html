@@ -267,9 +267,12 @@
 
   <header>
     <div class="container nav">
-      <a href="#top" class="logo" aria-label="Friendly Tech LV home">
-        <strong>Friendly Tech LV</strong>
-        <span>Patient in-home technology help</span>
+      <a href="#top" class="logo" aria-label="Friendly Tech LV home" style="flex-direction: row; align-items: center; gap: 0.85rem;">
+        <img src="Friendly Tech Concierge Logo.png" alt="Friendly Tech LV Logo" style="height: 54px; width: auto; border-radius: 12px;" />
+        <div style="display: flex; flex-direction: column; line-height: 1.1;">
+          <strong>Friendly Tech LV</strong>
+          <span>Patient in-home technology help</span>
+        </div>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
@@ -432,7 +435,7 @@
           <p>Tell us what you need help with and we will follow up to confirm availability. Weekend and limited evening appointments are available.</p>
         </div>
         <div class="grid-2">
-          <form class="card contact-card" action="https://formspree.io/f/xqengaby" method="POST">
+          <form class="card contact-card" action="https://formspree.io/f/xqengaby" method="POST" accept-charset="UTF-8">
             <h3>Appointment Request Form</h3>
             <p class="note">Please do not include passwords, verification codes, Social Security numbers, payment details, or other sensitive private information in this form.</p>
             <label for="name">Full Name</label>
@@ -454,6 +457,7 @@
             <label for="message">Briefly describe the issue</label>
             <textarea id="message" name="message" rows="5" required placeholder="Example: My printer will not connect to Wi-Fi, and I need help printing from my iPhone."></textarea>
             <input type="hidden" name="_subject" value="New Friendly Tech LV Appointment Request" />
+            <input type="hidden" name="_captcha" value="false" />
             <button class="btn btn-primary" type="submit">Send Appointment Request</button>
           </form>
           <aside class="card">
