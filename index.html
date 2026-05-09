@@ -450,7 +450,7 @@
           <p class="lead">Friendly Tech Concierge helps seniors, families, and everyday users in the Las Vegas Valley with computers, phones, tablets, Wi-Fi, printers, smart TVs, email, passwords, and technology lessons.</p>
           <div class="hero-actions">
             <a class="button primary" href="tel:17025709003">Call or Text (702) 570-9003</a>
-            <a class="button secondary" href="#contact">Request an Appointment</a>
+            <a class="button secondary" href="#appointment-request">Request an Appointment</a>
           </div>
           <div class="trust-row" aria-label="Trust highlights">
             <div class="trust-item">Patient explanations</div>
@@ -603,6 +603,58 @@
             <li>Simple recommendations without pressure</li>
           </ul>
         </div>
+      </div>
+    </section>
+
+    <section id="appointment-request" class="soft">
+      <div class="container grid-2">
+        <div>
+          <h2>Request an appointment.</h2>
+          <p class="muted">Use this form to describe what you need help with. Friendly Tech Concierge will follow up by call or text to confirm availability, pricing, and appointment details.</p>
+          <ul class="check-list">
+            <li>Please do not include passwords in this form.</li>
+            <li>Weekend and limited evening appointments are available.</li>
+            <li>Service is available in the Las Vegas Valley.</li>
+          </ul>
+        </div>
+        <form class="card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <h3>Appointment Request Form</h3>
+          <p class="muted">Replace <strong>YOUR_FORM_ID</strong> with your Formspree endpoint when ready.</p>
+
+          <label for="name"><strong>Name</strong></label>
+          <input id="name" name="name" type="text" required placeholder="Your name" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
+
+          <label for="phone"><strong>Phone number</strong></label>
+          <input id="phone" name="phone" type="tel" required placeholder="Best phone number" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
+
+          <label for="email"><strong>Email address</strong></label>
+          <input id="email" name="email" type="email" placeholder="Optional email" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
+
+          <label for="service"><strong>What do you need help with?</strong></label>
+          <select id="service" name="service" required style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;background:white;">
+            <option value="">Select one</option>
+            <option>Phone or tablet help</option>
+            <option>Computer help</option>
+            <option>Printer setup or troubleshooting</option>
+            <option>Wi-Fi troubleshooting</option>
+            <option>Smart TV / Roku / Fire Stick</option>
+            <option>Email or password help</option>
+            <option>Senior technology lesson</option>
+            <option>Multiple issues</option>
+          </select>
+
+          <label for="message"><strong>Briefly describe the issue</strong></label>
+          <textarea id="message" name="message" required rows="5" placeholder="Example: My printer will not connect to Wi-Fi, or I need help setting up a new iPhone." style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;font-family:Arial, Helvetica, sans-serif;"></textarea>
+
+          <label for="availability"><strong>Preferred appointment time</strong></label>
+          <input id="availability" name="availability" type="text" placeholder="Example: Saturday morning or weekday evening" style="width:100%;padding:14px;margin:8px 0 16px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
+
+          <label for="zip"><strong>ZIP code</strong></label>
+          <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="Your ZIP code" style="width:100%;padding:14px;margin:8px 0 18px;border:1px solid var(--border);border-radius:12px;font-size:1rem;" />
+
+          <button class="button primary" type="submit" style="width:100%;border:0;cursor:pointer;font-size:1rem;">Submit Appointment Request</button>
+          <p class="muted" style="font-size:0.92rem;margin-top:14px;">By submitting this form, you are requesting a follow-up. Your appointment is not confirmed until Friendly Tech Concierge contacts you.</p>
+        </form>
       </div>
     </section>
 
