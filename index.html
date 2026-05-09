@@ -1,96 +1,310 @@
 <!DOCTYPE html>
-            <h2>Professional support with patience, clarity, and trust.</h2>
-            <p>We believe technology support should feel calm, respectful, and understandable. Whether you need a device setup, troubleshooting, or one-on-one lessons, we take the time to explain things clearly without pressure or confusing technical language.</p>
-          </div>
-        </div>
-        <div class="grid-3" style="grid-template-columns: 1fr;">
-          <div class="why-card">
-            <h3>Patient Teaching</h3>
-            <p>We explain things clearly and make sure you feel comfortable before we leave.</p>
-          </div>
-          <div class="why-card">
-            <h3>In-Home Convenience</h3>
-            <p>Get help where your devices actually are — at home, connected to your own Wi-Fi, printer, and TV.</p>
-          </div>
-          <div class="why-card">
-            <h3>Trust-Focused Service</h3>
-            <p>Professional, respectful support with your privacy, comfort, and safety in mind.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friendly Tech LV | In-Home Tech Support</title>
 
-    <section id="pricing">
-      <div class="container two-column">
-        <div class="section-heading">
-          <h2>Clear starting pricing.</h2>
-          <p>Simple pricing helps clients know what to expect before scheduling. Final pricing may vary based on the issue, location, and time required.</p>
-          <p class="note">Replace the pricing below with your preferred launch rates.</p>
-        </div>
-        <div class="price-box">
-          <h3>In-Home Tech Visit</h3>
-          <div class="price">Starting at $85</div>
-          <p>Great for setup, troubleshooting, and everyday tech help.</p>
-          <ul>
-            <li>Weekends and limited evenings</li>
-            <li>Las Vegas Valley service area</li>
-            <li>Friendly explanations included</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #ffffff;
+    }
 
-    <section id="area" class="soft-bg">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Serving the Las Vegas Valley.</h2>
-          <p>Mobile in-home technology support for Las Vegas and nearby communities.</p>
-        </div>
-        <div class="grid-3">
-          <div class="service-card"><h3>Las Vegas</h3><p>In-home support for everyday technology needs.</p></div>
-          <div class="service-card"><h3>Henderson</h3><p>Available by appointment based on scheduling and distance.</p></div>
-          <div class="service-card"><h3>Summerlin & Nearby Areas</h3><p>Weekend and limited evening availability.</p></div>
-        </div>
-      </div>
-    </section>
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-    <section id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Ready to schedule in-home tech support?</h2>
-          <p>Call or text to request an appointment. Please include your name, general location, and what you need help with.</p>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-box">
-            <strong>Phone</strong>
-            <a href="tel:+17025709003">(702) 570-9003</a>
-          </div>
-          <div class="contact-box">
-            <strong>Email</strong>
-            <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a>
-          </div>
-          <div class="contact-box">
-            <strong>Hours</strong>
-            Weekends & limited evenings by appointment
-          </div>
-          <div class="contact-box">
-            <strong>Service Area</strong>
-            Las Vegas Valley and nearby areas
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    header {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+    }
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Friendly Tech LV. All rights reserved.</p>
-      <p>In-home tech support in Las Vegas, Nevada.</p>
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: bold;
+    }
+
+    .call-button {
+      background: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: #f8fafc;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #4b5563;
+    }
+
+    .hero-buttons {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button {
+      background: #2563eb;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .secondary-button {
+      border: 1px solid #d1d5db;
+      padding: 14px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #111827;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 25px;
+      background: white;
+    }
+
+    .soft-bg {
+      background: #f8fafc;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    @media(max-width: 850px) {
+      .hero-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a class="logo" href="#">
+      <img src="Friendly%20Tech%20Concierge%20Logo.png" alt="Friendly Tech LV Logo">
+    </a>
+
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="call-button" href="tel:+17025709003">
+      Call / Text
+    </a>
+
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <h1>Patient In-Home Tech Support in Las Vegas</h1>
+
+      <p>
+        Friendly Tech LV provides calm, professional technology help for seniors,
+        families, and everyday users throughout the Las Vegas Valley.
+      </p>
+
+      <p>
+        We help with computers, phones, Wi-Fi, printers, smart TVs,
+        passwords, email, and personalized technology lessons.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="primary-button" href="tel:+17025709003">
+          Call Now
+        </a>
+
+        <a class="secondary-button" href="#contact">
+          Request Appointment
+        </a>
+      </div>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <div class="card">
+      <h2>We Can Help With:</h2>
+
+      <ul>
+        <li>Computer setup & troubleshooting</li>
+        <li>Phone & tablet support</li>
+        <li>Wi-Fi & printer troubleshooting</li>
+        <li>Smart TV / Roku / Fire Stick setup</li>
+        <li>Email & password assistance</li>
+        <li>Technology lessons for seniors</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+
+    <h2>Friendly, Professional Technology Help</h2>
+
+    <div class="grid-3">
+
+      <div class="service-card">
+        <h3>Computer Help</h3>
+        <p>Setup, troubleshooting, cleanup, updates, and general support.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Phone & Tablet Help</h3>
+        <p>New device setup, app help, contacts, photos, and training.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Wi-Fi & Printer Support</h3>
+        <p>Home network troubleshooting and printer connection help.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="pricing" class="soft-bg">
+  <div class="container">
+
+    <h2>Simple Starting Pricing</h2>
+
+    <div class="card">
+      <h3>In-Home Tech Visit</h3>
+
+      <p><strong>Starting at $85</strong></p>
+
+      <p>
+        Weekend and limited evening appointments available throughout
+        the Las Vegas Valley.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <h2>Contact Friendly Tech LV</h2>
+
+    <p>
+      Call or text to request an appointment.
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <a href="tel:+17025709003">(702) 570-9003</a>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      help@friendlytechlv.com
+    </p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Friendly Tech LV • Las Vegas, Nevada</p>
+  </div>
+</footer>
+
 </body>
 </html>
