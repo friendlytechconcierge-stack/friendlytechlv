@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Friendly Tech Concierge provides patient in-home technology support, setup, troubleshooting, and lessons for seniors, families, and everyday users in the Las Vegas Valley." />
-  <title>Friendly Tech Concierge | In-Home Tech Support in Las Vegas</title>
+  <meta name="description" content="Friendly Tech Concierge provides patient, in-home technology support, setup, troubleshooting, and lessons for seniors, families, and everyday users in the Las Vegas Valley." />
+  <title>Friendly Tech Concierge | Premium In-Home Tech Support in Las Vegas</title>
   <style>
     :root {
+      --navy: #0f2742;
+      --navy-2: #173b63;
       --blue: #2563eb;
-      --blue-dark: #1d4ed8;
-      --navy: #102a43;
+      --blue-2: #1d4ed8;
       --sky: #eaf4ff;
+      --sky-2: #f6fbff;
       --gold: #f4b942;
+      --gold-soft: #fff4d7;
       --green: #16a34a;
       --text: #243447;
       --muted: #5f6f82;
       --soft: #f7fafc;
       --white: #ffffff;
       --border: #dbe5ef;
-      --shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
-      --radius: 22px;
+      --shadow: 0 24px 70px rgba(15, 39, 66, 0.14);
+      --shadow-soft: 0 12px 32px rgba(15, 39, 66, 0.08);
+      --radius: 24px;
+      --radius-lg: 34px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -36,11 +40,10 @@
     }
 
     a { color: inherit; }
-
     img { max-width: 100%; }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1160px, 92%);
       margin: 0 auto;
     }
 
@@ -59,16 +62,16 @@
     }
 
     header {
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(219, 229, 239, 0.9);
       position: sticky;
       top: 0;
-      z-index: 10;
-      backdrop-filter: blur(10px);
+      z-index: 20;
+      backdrop-filter: blur(14px);
     }
 
     .nav {
-      min-height: 86px;
+      min-height: 88px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -91,29 +94,30 @@
       display: flex;
       align-items: center;
       gap: 22px;
-      font-size: 0.98rem;
-      font-weight: 700;
+      font-size: 0.96rem;
+      font-weight: 800;
     }
 
     .nav-links a {
       text-decoration: none;
       color: var(--text);
+      transition: color 0.15s ease;
     }
 
-    .mobile-header-action { display: none; }
+    .nav-links a:hover { color: var(--blue-2); }
 
     .button {
       display: inline-flex;
       justify-content: center;
       align-items: center;
       gap: 8px;
-      min-height: 48px;
-      padding: 12px 22px;
+      min-height: 50px;
+      padding: 13px 23px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 900;
       border: 2px solid transparent;
-      transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
       cursor: pointer;
       font-size: 1rem;
       font-family: inherit;
@@ -121,33 +125,52 @@
 
     .button:hover { transform: translateY(-1px); }
     .button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
-      outline: 3px solid rgba(37, 99, 235, 0.35);
+      outline: 3px solid rgba(37, 99, 235, 0.32);
       outline-offset: 3px;
     }
 
     .primary {
       background: var(--blue);
       color: white;
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.25);
     }
 
-    .primary:hover { background: var(--blue-dark); }
+    .primary:hover { background: var(--blue-2); }
 
     .secondary {
       background: white;
-      color: var(--blue-dark);
+      color: var(--blue-2);
       border-color: var(--border);
+      box-shadow: 0 8px 22px rgba(15, 39, 66, 0.06);
     }
 
     .hero {
-      background: linear-gradient(135deg, #f7fbff 0%, #eaf4ff 55%, #ffffff 100%);
-      padding: 74px 0 58px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 34%),
+        linear-gradient(135deg, #f8fcff 0%, #eaf4ff 50%, #ffffff 100%);
+      padding: 78px 0 64px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      top: 40px;
+      width: 360px;
+      height: 360px;
+      border-radius: 999px;
+      background: rgba(244, 185, 66, 0.18);
+      filter: blur(10px);
     }
 
     .hero-grid {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1.18fr 0.82fr;
-      gap: 42px;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 46px;
       align-items: center;
     }
 
@@ -157,32 +180,38 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: white;
-      color: var(--blue-dark);
-      font-weight: 800;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--blue-2);
+      font-weight: 900;
       font-size: 0.92rem;
       border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(15, 39, 66, 0.06);
     }
 
-    h1, h2, h3 { line-height: 1.15; color: var(--navy); margin: 0 0 16px; }
+    h1, h2, h3 {
+      line-height: 1.12;
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
 
     h1 {
-      font-size: clamp(2.35rem, 5vw, 4.15rem);
-      letter-spacing: -0.04em;
-      margin-top: 20px;
+      font-size: clamp(2.55rem, 5.4vw, 4.85rem);
+      letter-spacing: -0.055em;
+      margin-top: 22px;
+      max-width: 820px;
     }
 
     h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
-      letter-spacing: -0.025em;
+      font-size: clamp(1.9rem, 3.4vw, 3rem);
+      letter-spacing: -0.035em;
     }
 
-    h3 { font-size: 1.25rem; }
+    h3 { font-size: 1.26rem; }
 
     .lead {
-      font-size: 1.22rem;
+      font-size: 1.23rem;
       color: var(--muted);
-      max-width: 680px;
+      max-width: 720px;
       margin-bottom: 28px;
     }
 
@@ -190,35 +219,73 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin: 24px 0;
+      margin: 26px 0;
+    }
+
+    .microcopy {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-top: -8px;
     }
 
     .trust-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 28px;
+      margin-top: 30px;
     }
 
     .trust-item {
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.82);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px;
+      border-radius: 18px;
+      padding: 15px;
       font-size: 0.96rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--navy);
+      box-shadow: 0 8px 22px rgba(15, 39, 66, 0.05);
     }
 
     .hero-card {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(219, 229, 239, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 30px;
       box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
     }
 
-    .hero-card h2 { font-size: 1.7rem; }
+    .hero-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .hero-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: var(--sky);
+      color: var(--blue-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+    }
+
+    .hero-card h2 { font-size: 1.65rem; margin-bottom: 6px; }
+
+    .mini-panel {
+      background: var(--gold-soft);
+      border: 1px solid #f2d78a;
+      color: #6d4b00;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-size: 0.96rem;
+      font-weight: 800;
+      margin-top: 22px;
+    }
 
     .check-list {
       list-style: none;
@@ -250,11 +317,17 @@
       margin-top: 2px;
     }
 
-    section { padding: 72px 0; }
+    section { padding: 78px 0; }
 
     .section-intro {
-      max-width: 760px;
-      margin-bottom: 34px;
+      max-width: 780px;
+      margin-bottom: 36px;
+    }
+
+    .center-intro {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .muted { color: var(--muted); }
@@ -262,60 +335,107 @@
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 26px;
     }
 
     .card {
       background: white;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: 0 8px 22px rgba(16, 42, 67, 0.06);
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .service-card {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
     }
 
     .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       background: var(--sky);
-      color: var(--blue-dark);
-      font-size: 1.45rem;
-      margin-bottom: 16px;
+      color: var(--blue-2);
+      font-size: 1.5rem;
+      margin-bottom: 18px;
     }
 
-    .soft { background: var(--soft); }
+    .soft {
+      background:
+        linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+    }
+
+    .reassurance-band {
+      background: var(--navy);
+      color: white;
+      padding: 26px 0;
+    }
+
+    .reassurance-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .reassurance-item {
+      border-left: 1px solid rgba(255,255,255,0.22);
+      padding-left: 18px;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.96rem;
+      font-weight: 700;
+    }
+
+    .reassurance-item strong {
+      display: block;
+      color: white;
+      font-size: 1.02rem;
+      margin-bottom: 2px;
+    }
 
     .pricing-card {
       position: relative;
       overflow: hidden;
     }
 
+    .featured-card {
+      border: 2px solid rgba(37, 99, 235, 0.32);
+      box-shadow: var(--shadow);
+    }
+
     .price {
-      font-size: 2.5rem;
+      font-size: 2.65rem;
       line-height: 1;
       font-weight: 900;
       color: var(--navy);
       margin: 10px 0 8px;
+      letter-spacing: -0.04em;
     }
 
     .badge {
       display: inline-block;
-      background: #fff7df;
+      background: var(--gold-soft);
       color: #8a5c00;
       border: 1px solid #f3d37a;
       padding: 6px 11px;
       border-radius: 999px;
       font-size: 0.86rem;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 14px;
     }
 
@@ -326,7 +446,7 @@
       grid-template-columns: 54px 1fr;
       gap: 16px;
       align-items: start;
-      padding: 22px 0;
+      padding: 24px 0;
       border-bottom: 1px solid var(--border);
     }
 
@@ -344,16 +464,17 @@
       align-items: center;
       justify-content: center;
       font-weight: 900;
+      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
     }
 
     .appointment-note {
-      background: #fff7df;
+      background: var(--gold-soft);
       border: 1px solid #f3d37a;
       color: #6d4b00;
       border-radius: 16px;
       padding: 14px 16px;
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-top: 18px;
     }
 
@@ -375,51 +496,65 @@
     }
 
     textarea { resize: vertical; }
-
     .form-submit { width: 100%; border: 0; }
 
+    .form-card {
+      border-top: 6px solid var(--blue);
+    }
+
     .cta {
-      background: linear-gradient(135deg, var(--navy), #1d4ed8);
+      background:
+        radial-gradient(circle at top right, rgba(244, 185, 66, 0.26), transparent 32%),
+        linear-gradient(135deg, var(--navy), #1d4ed8);
       color: white;
-      border-radius: 30px;
-      padding: 42px;
+      border-radius: var(--radius-lg);
+      padding: 44px;
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 24px;
       align-items: center;
+      box-shadow: var(--shadow);
     }
 
     .cta h2, .cta p { color: white; }
-    .cta p { margin: 0; opacity: 0.9; }
+    .cta p { margin: 0; opacity: 0.92; }
 
     .contact-box {
       background: white;
       border-radius: var(--radius);
       padding: 28px;
       border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
     }
 
     .contact-row {
       display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 14px;
       margin-top: 20px;
     }
 
     .contact-row a {
       display: block;
-      background: var(--soft);
+      background: var(--sky-2);
       border: 1px solid var(--border);
       padding: 16px;
-      border-radius: 14px;
+      border-radius: 16px;
       text-decoration: none;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--navy);
+    }
+
+    .fine-print {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 12px;
     }
 
     footer {
       background: var(--navy);
       color: white;
-      padding: 34px 0;
+      padding: 36px 0;
       font-size: 0.95rem;
     }
 
@@ -430,26 +565,27 @@
       flex-wrap: wrap;
     }
 
-    @media (max-width: 860px) {
+    @media (max-width: 920px) {
       body { font-size: 17px; }
       .top-bar { font-size: 0.88rem; }
       .nav { min-height: 76px; padding: 10px 0; }
       .nav-links { display: none; }
-      .mobile-header-action { display: inline-flex; padding: 10px 16px; min-height: 42px; font-size: 0.92rem; }
       .brand img { height: 62px; }
-      .hero { padding: 42px 0 48px; }
-      .hero-grid, .grid-3, .grid-2, .cta { grid-template-columns: 1fr; }
+      .hero { padding: 44px 0 50px; }
+      .hero-grid, .grid-3, .grid-2, .cta, .reassurance-grid, .contact-row { grid-template-columns: 1fr; }
       .trust-row { grid-template-columns: 1fr; }
       .hero-actions .button { width: 100%; }
-      section { padding: 54px 0; }
-      .cta { padding: 30px; }
+      section { padding: 56px 0; }
+      .cta { padding: 32px; }
       footer .container { display: grid; }
+      .reassurance-item { border-left: 0; border-top: 1px solid rgba(255,255,255,0.22); padding: 14px 0 0; }
+      .reassurance-item:first-child { border-top: 0; padding-top: 0; }
     }
 
     @media (max-width: 420px) {
       .brand img { height: 54px; }
-      .mobile-header-action { padding: 9px 12px; font-size: 0.86rem; }
-      h1 { font-size: 2.18rem; }
+      h1 { font-size: 2.22rem; }
+      .card, .hero-card { padding: 23px; }
     }
   </style>
 </head>
@@ -474,7 +610,6 @@
         <a href="#contact">Contact</a>
         <a class="button primary" href="tel:17025709003">Call / Text</a>
       </nav>
-      <a class="button primary mobile-header-action" href="tel:17025709003">Call / Text</a>
     </div>
   </header>
 
@@ -482,21 +617,29 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Friendly, calm, in-home technology help</span>
-          <h1>Tech support that makes people feel comfortable, not embarrassed.</h1>
-          <p class="lead">Friendly Tech Concierge helps seniors, families, and everyday users in the Las Vegas Valley with computers, phones, tablets, Wi-Fi, printers, smart TVs, email, passwords, and technology lessons.</p>
+          <span class="eyebrow">Premium in-home tech help for Las Vegas seniors and families</span>
+          <h1>Technology support that feels patient, private, and genuinely helpful.</h1>
+          <p class="lead">Friendly Tech Concierge helps seniors, families, and everyday users with phones, computers, Wi-Fi, printers, smart TVs, email, passwords, and one-on-one technology lessons at home.</p>
           <div class="hero-actions">
             <a class="button primary" href="tel:17025709003">Call or Text (702) 570-9003</a>
             <a class="button secondary" href="#appointment-request">Request an Appointment</a>
           </div>
+          <p class="microcopy">No pressure. No confusing tech talk. No embarrassment about basic questions.</p>
           <div class="trust-row" aria-label="Trust highlights">
             <div class="trust-item">Patient explanations</div>
             <div class="trust-item">In-home convenience</div>
-            <div class="trust-item">No confusing tech talk</div>
+            <div class="trust-item">Senior-friendly support</div>
           </div>
         </div>
+
         <aside class="hero-card" aria-label="Common problems solved">
-          <h2>We can help with:</h2>
+          <div class="hero-card-top">
+            <div class="hero-card-icon">✓</div>
+            <div>
+              <h2>Calm help for everyday tech problems.</h2>
+              <p class="muted" style="margin:0;">Setup, troubleshooting, cleanup, and lessons.</p>
+            </div>
+          </div>
           <ul class="check-list">
             <li>New phone, tablet, or computer setup</li>
             <li>Wi-Fi, printer, and smart TV troubleshooting</li>
@@ -504,43 +647,53 @@
             <li>Slow computer cleanup and basic virus checks</li>
             <li>One-on-one lessons for seniors and beginners</li>
           </ul>
+          <div class="mini-panel">Appointments are confirmed personally so the visit fits your issue, location, and schedule.</div>
         </aside>
+      </div>
+    </section>
+
+    <section class="reassurance-band" aria-label="Service reassurance">
+      <div class="container reassurance-grid">
+        <div class="reassurance-item"><strong>Respectful</strong>No rushed or judgmental explanations.</div>
+        <div class="reassurance-item"><strong>Clear</strong>Plain-English support for everyday users.</div>
+        <div class="reassurance-item"><strong>Practical</strong>Focused on what you actually need fixed.</div>
+        <div class="reassurance-item"><strong>Local</strong>Serving the Las Vegas Valley.</div>
       </div>
     </section>
 
     <section id="services">
       <div class="container">
-        <div class="section-intro">
+        <div class="section-intro center-intro">
           <h2>Practical help for the technology you use every day.</h2>
           <p class="muted">The goal is not just to fix the problem. It is to help you understand what happened, feel safer using your devices, and know what to do next.</p>
         </div>
         <div class="grid-3">
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">💻</div>
             <h3>Computer Help</h3>
             <p>Setup, troubleshooting, updates, slow computer checks, cleanup, software help, and basic hardware troubleshooting.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">📱</div>
             <h3>Phone & Tablet Help</h3>
             <p>New device setup, apps, contacts, photos, email, settings, accessibility options, and patient step-by-step training.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">📶</div>
             <h3>Wi-Fi & Printer Support</h3>
             <p>Home Wi-Fi troubleshooting, printer connection issues, wireless printing, router basics, and network guidance.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">📺</div>
             <h3>Smart TV & Streaming</h3>
             <p>Roku, Fire Stick, smart TV setup, streaming app sign-in, remote help, and simple usage walkthroughs.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">🔐</div>
             <h3>Email & Password Help</h3>
             <p>Email setup, password organization guidance, account recovery support, and safer sign-in habits.</p>
           </article>
-          <article class="card">
+          <article class="card service-card">
             <div class="icon">👵</div>
             <h3>Senior Tech Lessons</h3>
             <p>Friendly lessons on texting, video calls, photos, online safety, scam awareness, apps, and everyday device use.</p>
@@ -551,12 +704,12 @@
 
     <section class="soft" id="pricing">
       <div class="container">
-        <div class="section-intro">
-          <h2>Simple starting pricing.</h2>
+        <div class="section-intro center-intro">
+          <h2>Simple starting pricing with no mystery.</h2>
           <p class="muted">Clear pricing helps avoid surprises. Final cost depends on the type of help needed, visit length, and location.</p>
         </div>
         <div class="grid-3">
-          <article class="card pricing-card">
+          <article class="card pricing-card featured-card">
             <span class="badge">Most common</span>
             <h3>In-Home Tech Visit</h3>
             <div class="price">$85+</div>
@@ -588,13 +741,15 @@
             </ul>
           </article>
         </div>
+        <p class="fine-print">Note: Pricing shown is starting pricing. Some appointments may require additional time, parts, subscriptions, or third-party services.</p>
       </div>
     </section>
 
     <section id="process">
       <div class="container grid-2">
         <div>
-          <h2>How appointments work.</h2>
+          <span class="eyebrow">A simple, respectful process</span>
+          <h2 style="margin-top:18px;">How appointments work.</h2>
           <p class="muted">A calm process makes tech problems less stressful, especially for clients who feel overwhelmed or have had bad support experiences before.</p>
         </div>
         <div class="card steps">
@@ -646,7 +801,8 @@
     <section id="appointment-request">
       <div class="container grid-2">
         <div>
-          <h2>Request an appointment.</h2>
+          <span class="eyebrow">Start here</span>
+          <h2 style="margin-top:18px;">Request an appointment.</h2>
           <p class="muted">Use this form to describe what you need help with. Friendly Tech Concierge will follow up by call or text to confirm availability, pricing, and appointment details.</p>
           <ul class="check-list">
             <li>Please do not include passwords in this form.</li>
@@ -655,7 +811,7 @@
           </ul>
           <div class="appointment-note">Your appointment is not confirmed until you receive a follow-up call or text.</div>
         </div>
-        <form class="card" action="https://formspree.io/f/xqengaby" method="POST">
+        <form class="card form-card" action="https://formspree.io/f/xqengaby" method="POST">
           <h3>Appointment Request Form</h3>
           <input type="hidden" name="_subject" value="New Friendly Tech Concierge Appointment Request" />
 
