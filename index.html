@@ -3,128 +3,263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Friendly Tech LV | In-Home Tech Support</title>
-
+  <meta name="description" content="Friendly Tech Concierge provides patient in-home technology support, setup, troubleshooting, and lessons for seniors, families, and everyday users in the Las Vegas Valley." />
+  <title>Friendly Tech Concierge | In-Home Tech Support in Las Vegas</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #1f2937;
-      background: #ffffff;
+    :root {
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --navy: #102a43;
+      --sky: #eaf4ff;
+      --gold: #f4b942;
+      --green: #16a34a;
+      --text: #243447;
+      --muted: #5f6f82;
+      --soft: #f7fafc;
+      --white: #ffffff;
+      --border: #dbe5ef;
+      --shadow: 0 18px 45px rgba(16, 42, 67, 0.12);
+      --radius: 22px;
     }
 
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    a { color: inherit; }
+
     .container {
-      width: 90%;
-      max-width: 1100px;
-      margin: auto;
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .top-bar {
+      background: var(--navy);
+      color: white;
+      font-size: 0.95rem;
+      padding: 9px 0;
+    }
+
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     header {
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 15px 0;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
     }
 
     .nav {
+      min-height: 86px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 24px;
     }
 
-    .logo img {
-      height: 190px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      height: 74px;
       width: auto;
+      display: block;
+    }
+
+    .brand-text strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+
+    .brand-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
+      align-items: center;
+      gap: 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
     }
 
     .nav-links a {
       text-decoration: none;
-      color: #374151;
-      font-weight: bold;
+      color: var(--text);
     }
 
-    .call-button {
-      background: #2563eb;
-      color: white;
-      padding: 12px 20px;
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 22px;
       border-radius: 999px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition: transform 0.15s ease, background 0.15s ease, border 0.15s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .primary {
+      background: var(--blue);
+      color: white;
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
+    }
+
+    .primary:hover { background: var(--blue-dark); }
+
+    .secondary {
+      background: white;
+      color: var(--blue-dark);
+      border-color: var(--border);
     }
 
     .hero {
-      background: #f8fafc;
-      padding: 80px 0;
+      background: linear-gradient(135deg, #f7fbff 0%, #eaf4ff 55%, #ffffff 100%);
+      padding: 74px 0 58px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 42px;
       align-items: center;
     }
 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: white;
+      color: var(--blue-dark);
+      font-weight: 800;
+      font-size: 0.92rem;
+      border: 1px solid var(--border);
+    }
+
+    h1, h2, h3 { line-height: 1.15; color: var(--navy); margin: 0 0 16px; }
+
     h1 {
-      font-size: 3rem;
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-size: clamp(2.35rem, 5vw, 4.15rem);
+      letter-spacing: -0.04em;
+      margin-top: 20px;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 15px;
+      font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+      letter-spacing: -0.025em;
     }
 
-    p {
-      color: #4b5563;
+    h3 { font-size: 1.25rem; }
+
+    .lead {
+      font-size: 1.22rem;
+      color: var(--muted);
+      max-width: 680px;
+      margin-bottom: 28px;
     }
 
-    .hero-buttons {
-      margin-top: 30px;
+    .hero-actions {
       display: flex;
-      gap: 15px;
+      gap: 14px;
       flex-wrap: wrap;
+      margin: 24px 0;
     }
 
-    .primary-button {
-      background: #2563eb;
-      color: white;
-      padding: 14px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: bold;
+    .trust-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
     }
 
-    .secondary-button {
-      border: 1px solid #d1d5db;
-      padding: 14px 22px;
-      border-radius: 999px;
-      text-decoration: none;
-      color: #111827;
-      font-weight: bold;
+    .trust-item {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--navy);
     }
 
-    .card {
+    .hero-card {
       background: white;
-      border: 1px solid #e5e7eb;
-      border-radius: 20px;
-      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
     }
 
-    .card ul {
-      padding-left: 20px;
+    .hero-card h2 { font-size: 1.7rem; }
+
+    .check-list {
+      list-style: none;
+      margin: 20px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
     }
 
-    section {
-      padding: 70px 0;
+    .check-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
     }
+
+    .check-list li::before {
+      content: "✓";
+      color: white;
+      background: var(--green);
+      font-weight: 900;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 24px;
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    section { padding: 72px 0; }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .muted { color: var(--muted); }
 
     .grid-3 {
       display: grid;
@@ -132,179 +267,71 @@
       gap: 20px;
     }
 
-    .service-card {
-      border: 1px solid #e5e7eb;
-      border-radius: 18px;
-      padding: 25px;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card {
       background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: 0 8px 22px rgba(16, 42, 67, 0.06);
     }
 
-    .soft-bg {
-      background: #f8fafc;
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--sky);
+      color: var(--blue-dark);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
     }
 
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 30px 0;
+    .soft { background: var(--soft); }
+
+    .pricing-card {
+      position: relative;
+      overflow: hidden;
     }
 
-    @media(max-width: 850px) {
-      .hero-grid,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      h1 {
-        font-size: 2.2rem;
-      }
+    .price {
+      font-size: 2.5rem;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--navy);
+      margin: 10px 0 8px;
     }
-  </style>
-</head>
 
-<body>
+    .badge {
+      display: inline-block;
+      background: #fff7df;
+      color: #8a5c00;
+      border: 1px solid #f3d37a;
+      padding: 6px 11px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
 
-<header>
-  <div class="container nav">
+    .steps {
+      counter-reset: step;
+    }
 
-    <a class="logo" href="#">
-     <img src="Friendly%20Tech%20Concierge%20Logo.png" alt="Friendly Tech LV Logo" style="height: 190px;">
-    </a>
+    .step {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="call-button" href="tel:+17025709003">
-      Call / Text
-    </a>
-
-  </div>
-</header>
-
-<section class="hero">
-  <div class="container hero-grid">
-
-    <div>
-      <h1>Patient In-Home Tech Support in Las Vegas</h1>
-
-      <p>
-        Friendly Tech LV provides calm, professional technology help for seniors,
-        families, and everyday users throughout the Las Vegas Valley.
-      </p>
-
-      <p>
-        We help with computers, phones, Wi-Fi, printers, smart TVs,
-        passwords, email, and personalized technology lessons.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="primary-button" href="tel:+17025709003">
-          Call Now
-        </a>
-
-        <a class="secondary-button" href="#contact">
-          Request Appointment
-        </a>
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>We Can Help With:</h2>
-
-      <ul>
-        <li>Computer setup & troubleshooting</li>
-        <li>Phone & tablet support</li>
-        <li>Wi-Fi & printer troubleshooting</li>
-        <li>Smart TV / Roku / Fire Stick setup</li>
-        <li>Email & password assistance</li>
-        <li>Technology lessons for seniors</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-
-    <h2>Friendly, Professional Technology Help</h2>
-
-    <div class="grid-3">
-
-      <div class="service-card">
-        <h3>Computer Help</h3>
-        <p>Setup, troubleshooting, cleanup, updates, and general support.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Phone & Tablet Help</h3>
-        <p>New device setup, app help, contacts, photos, and training.</p>
-      </div>
-
-      <div class="service-card">
-        <h3>Wi-Fi & Printer Support</h3>
-        <p>Home network troubleshooting and printer connection help.</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<section id="pricing" class="soft-bg">
-  <div class="container">
-
-    <h2>Simple Starting Pricing</h2>
-
-    <div class="card">
-      <h3>In-Home Tech Visit</h3>
-
-      <p><strong>Starting at $85</strong></p>
-
-      <p>
-        Weekend and limited evening appointments available throughout
-        the Las Vegas Valley.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-
-    <h2>Contact Friendly Tech LV</h2>
-
-    <p>
-      Call or text to request an appointment.
-    </p>
-
-    <p>
-      <strong>Phone:</strong>
-      <a href="tel:+17025709003">(702) 570-9003</a>
-    </p>
-
-    <p>
-      <strong>Email:</strong>
-      help@friendlytechlv.com
-    </p>
-
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <p>© 2025 Friendly Tech LV • Las Vegas, Nevada</p>
-  </div>
-</footer>
-
-</body>
-</html>
+    .step:last-child {
