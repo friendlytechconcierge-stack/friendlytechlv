@@ -562,7 +562,34 @@
       gap: 16px;
       flex-wrap: wrap;
     }
+@media (min-width: 1000px) {
+  .brand img {
+    height: 145px;
+  }
 
+  .nav {
+    min-height: 160px;
+  }
+
+  .hero {
+    padding: 86px 0 78px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 64px;
+  }
+
+  .hero-card {
+    max-width: 460px;
+    justify-self: end;
+  }
+
+  .service-card,
+  .pricing-card {
+    min-height: 270px;
+  }
+}
     @media (max-width: 920px) {
       body { font-size: 17px; }
       .top-bar { font-size: 0.88rem; }
