@@ -398,20 +398,74 @@
     @media (max-width: 900px) {
       .hero-grid, .split, .form-section { grid-template-columns: 1fr; }
       .cards, .process { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; flex-direction: column; }
-      .nav-actions { justify-content: flex-start; }
-      .hero { padding-top: 42px; }
+
+      /* MOBILE HEADER FIX */
+      .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 16px;
+        gap: 12px;
+      }
+
+      .logo-wrap {
+        min-width: auto;
+        flex-shrink: 1;
+      }
+
       .logo {
-        width: 180px;
+        width: 135px;
         height: auto;
+      }
+
+      .nav-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        justify-content: flex-end;
+      }
+
+      .nav-actions .btn {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+
+      .hero {
+        padding-top: 36px;
       }
     }
 
     @media (max-width: 520px) {
-      .btn { width: 100%; }
-      .nav-actions, .hero-buttons { width: 100%; }
-      .form-section { padding: 26px; }
-      section { padding: 46px 18px; }
+      /* Keep hero buttons full width, but NOT header buttons */
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .nav-actions {
+        width: auto;
+      }
+
+      .logo {
+        width: 115px;
+      }
+
+      .nav-actions .btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+
+      .form-section {
+        padding: 26px;
+      }
+
+      section {
+        padding: 46px 18px;
+      }
     }
   </style>
 </head>
