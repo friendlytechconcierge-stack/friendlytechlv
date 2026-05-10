@@ -337,11 +337,19 @@
     }
 
     .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-    }
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 40px;
+}
 
+.grid-2 > * {
+  width: 100%;
+  max-width: 100%;
+}
+    }
+.check-list {
+  max-width: 100%;
+}
     .card {
       background: white;
       border: 1px solid var(--border);
