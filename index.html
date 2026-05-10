@@ -1,31 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- =========================================================
-    FRIENDLY TECH CONCIERGE WEBSITE
-    Simple single-page website for GitHub Pages
-
-    EASY EDIT AREAS:
-    1. Business info: search for "EDIT BUSINESS INFO"
-    2. Prices: search for "EDIT PRICING"
-    3. Services: search for "EDIT SERVICES"
-    4. Formspree endpoint: already added in the contact form
-    5. Logo image: uses "Friendly Tech Concierge Logo.png"
-    6. Headshot image: uses "images/headshot.png"
-  ========================================================== -->
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- EDIT BUSINESS INFO: Page title and Google preview text -->
   <title>Friendly Tech Concierge | In-Home Tech Support for Seniors and Families in Las Vegas</title>
   <meta name="description" content="Friendly in-home tech support in Las Vegas for seniors, families, and everyday users. Help with computers, phones, Wi‑Fi, printers, smart TVs, passwords, email, and one-on-one tech lessons." />
 
   <style>
-    /* =========================================================
-      COLOR PALETTE
-      Change these colors once and the whole site updates.
-    ========================================================== */
     :root {
       --navy: #12324a;
       --blue: #246b8f;
@@ -97,8 +79,6 @@
       height: auto;
       object-fit: contain;
     }
-
-    
 
     .nav-actions {
       display: flex;
@@ -402,8 +382,6 @@
     @media (max-width: 900px) {
       .hero-grid, .split, .form-section { grid-template-columns: 1fr; }
       .cards, .process { grid-template-columns: 1fr; }
-
-      /* MOBILE HEADER FIX */
       .nav {
         flex-direction: row;
         align-items: center;
@@ -441,7 +419,6 @@
     }
 
     @media (max-width: 520px) {
-      /* Keep hero buttons full width, but NOT header buttons */
       .hero-buttons .btn {
         width: 100%;
       }
@@ -475,17 +452,13 @@
 </head>
 
 <body>
-  <!-- EDIT BUSINESS INFO: Top announcement bar -->
   <div class="topbar">Trusted in-home tech support across the Las Vegas Valley • Weekend and evening appointments available</div>
 
   <header>
     <div class="nav">
       <a class="logo-wrap" href="#top" aria-label="Friendly Tech Concierge home">
-        <!-- IMPORTANT: This file must be in the same folder as index.html -->
         <img class="logo" src="Friendly Tech Concierge Logo.png" alt="Friendly Tech Concierge logo" />
       </a>
-
-      <!-- EDIT BUSINESS INFO: Phone number links -->
       <nav class="nav-actions" aria-label="Main actions">
         <a class="btn btn-secondary" href="tel:7025709003">Call</a>
         <a class="btn btn-secondary" href="sms:7025709003">Text</a>
@@ -495,10 +468,6 @@
   </header>
 
   <main id="top">
-    <!-- =========================================================
-      HERO SECTION
-      This is the first thing visitors see.
-    ========================================================== -->
     <section class="hero">
       <div class="hero-grid">
         <div>
@@ -520,17 +489,12 @@
         </div>
 
         <aside class="headshot-card">
-          <!-- IMPORTANT: Put your professional headshot at images/headshot.png -->
           <img src="images/headshot.png" alt="Friendly Tech Concierge owner and in-home tech support specialist" />
           <h2>Meet Your Local Tech Concierge</h2>
           <p>I believe tech support should feel approachable, respectful, and easy to understand. My approach is simple: solve the problem, explain things clearly, and help people feel more confident using their technology afterward.</p>
         </aside>
       </div>
     </section>
-
-    <!-- =========================================================
-      EDIT SERVICES: Add, remove, or change cards below.
-    ========================================================== -->
     <section id="services">
       <h2 class="section-title">Reliable help for the technology you use every day.</h2>
       <p class="section-intro">Many people feel overwhelmed or frustrated when technology stops working. Friendly Tech Concierge focuses on practical solutions, patient guidance, and making sure people feel comfortable asking questions along the way.</p>
@@ -544,10 +508,6 @@
         <div class="card"><h3>Senior Tech Lessons</h3><p>One-on-one technology lessons designed for seniors and beginners who want extra time, patience, and hands-on guidance.</p></div>
       </div>
     </section>
-
-    <!-- =========================================================
-      EDIT PRICING: Change prices and wording here.
-    ========================================================== -->
     <section id="pricing">
       <h2 class="section-title">Straightforward pricing and clear communication.</h2>
       <p class="section-intro">You should know what to expect before the appointment begins. Pricing is discussed ahead of time and additional work is never added without your approval.</p>
@@ -572,10 +532,6 @@
 
       <div class="note"><strong>Pricing note:</strong> Most appointments begin at $85 for the first hour. If additional time or outside services are needed, everything is discussed clearly before moving forward.</div>
     </section>
-
-    <!-- =========================================================
-      TRUST + BOUNDARIES SECTION
-    ========================================================== -->
     <section class="split">
       <div class="family-box">
         <h2 class="section-title">Helping a parent or family member with technology?</h2>
@@ -600,10 +556,6 @@
         </ul>
       </div>
     </section>
-
-    <!-- =========================================================
-      PROCESS SECTION
-    ========================================================== -->
     <section>
       <h2 class="section-title">What to expect from your appointment.</h2>
       <p class="section-intro">The process is designed to be straightforward, comfortable, and easy to follow from start to finish.</p>
@@ -626,22 +578,12 @@
         </div>
       </div>
     </section>
-
-    <!-- =========================================================
-      SERVICE AREA SECTION
-    ========================================================== -->
     <section>
       <div class="service-area">
         <h2 class="section-title">Proudly serving the Las Vegas Valley.</h2>
         <p class="section-intro">Friendly Tech Concierge provides in-home tech support throughout Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities. Appointment availability may vary based on location and scheduling.</p>
       </div>
     </section>
-
-    <!-- =========================================================
-      CONTACT FORM
-      Formspree endpoint is already added below.
-      To change it later, edit the action="..." URL.
-    ========================================================== -->
     <section id="appointment">
       <div class="form-section">
         <div>
@@ -681,8 +623,6 @@
 
           <label for="message">Briefly describe the issue</label>
           <textarea id="message" name="message" placeholder="Example: My printer stopped connecting to Wi-Fi, or I need help setting up a new iPhone." required></textarea>
-
-          <!-- Formspree helper fields -->
           <input type="hidden" name="_subject" value="New Friendly Tech Concierge Appointment Request" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
