@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Friendly Tech Concierge | In-Home Tech Support for Seniors and Families in Las Vegas</title>
-  <meta name="description" content="Friendly in-home tech support in Las Vegas for seniors, families, and everyday users. Help with computers, phones, Wi‑Fi, printers, smart TVs, passwords, email, and one-on-one tech lessons." />
+  <meta name="description" content="Premium in-home tech support in the Las Vegas Valley for seniors, families, and busy households. Help with computers, phones, tablets, Wi-Fi, printers, smart TVs, email, passwords, malware cleanup, data transfer, tech lessons, and scam prevention." />
 
   <style>
     :root {
@@ -22,7 +21,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -34,7 +32,6 @@
     }
 
     a { color: inherit; text-decoration: none; }
-
     img { max-width: 100%; display: block; }
 
     .topbar {
@@ -106,21 +103,9 @@
       box-shadow: 0 10px 22px rgba(18, 50, 74, 0.12);
     }
 
-    .btn-primary {
-      background: var(--gold);
-      color: #1e293b;
-    }
-
-    .btn-secondary {
-      background: var(--white);
-      color: var(--navy);
-      border-color: var(--border);
-    }
-
-    .btn-dark {
-      background: var(--navy);
-      color: var(--white);
-    }
+    .btn-primary { background: var(--gold); color: #1e293b; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: var(--border); }
+    .btn-dark { background: var(--navy); color: var(--white); }
 
     .hero {
       background: linear-gradient(135deg, var(--light-blue), var(--cream));
@@ -203,16 +188,8 @@
       border: 4px solid var(--light-blue);
     }
 
-    .headshot-card h2 {
-      margin: 16px 0 6px;
-      font-size: 1.4rem;
-    }
-
-    .headshot-card p {
-      font-size: 1rem;
-      margin: 0;
-      color: var(--muted);
-    }
+    .headshot-card h2 { margin: 16px 0 6px; font-size: 1.4rem; }
+    .headshot-card p { font-size: 1rem; margin: 0; color: var(--muted); }
 
     section {
       max-width: 1120px;
@@ -247,17 +224,42 @@
       box-shadow: 0 8px 24px rgba(18, 50, 74, 0.06);
     }
 
-    .card h3 {
-      margin-top: 0;
-      font-size: 1.25rem;
+    .card h3 { margin-top: 0; font-size: 1.25rem; }
+
+    .pricing-table {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 50, 74, 0.06);
+      margin-bottom: 24px;
     }
 
-    .price {
-      font-size: 2.1rem;
-      color: var(--blue);
-      font-weight: 900;
-      margin: 10px 0;
+    .pricing-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 22px;
     }
+
+    .pricing-header h3 {
+      color: var(--white);
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      gap: 16px;
+      padding: 16px 22px;
+      border-top: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .pricing-row:first-of-type { border-top: none; }
+
+    .service-name { font-weight: 700; color: var(--text); }
+    .service-price { font-weight: 900; color: var(--blue); text-align: right; }
 
     .note {
       background: #fff8e6;
@@ -275,11 +277,7 @@
       align-items: stretch;
     }
 
-    ul {
-      padding-left: 20px;
-      margin-bottom: 0;
-    }
-
+    ul { padding-left: 20px; margin-bottom: 0; }
     li { margin: 8px 0; }
 
     .family-box {
@@ -291,6 +289,7 @@
 
     .family-box h2 { color: var(--white); }
     .family-box p { color: #d9e6ea; }
+    .family-box li { color: var(--white); }
 
     .boundary-box {
       background: var(--white);
@@ -354,10 +353,7 @@
       background: #fbfdfe;
     }
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
+    textarea { min-height: 120px; resize: vertical; }
 
     .small-note {
       font-size: 0.92rem;
@@ -384,6 +380,7 @@
     @media (max-width: 900px) {
       .hero-grid, .split, .form-section { grid-template-columns: 1fr; }
       .cards, .process { grid-template-columns: 1fr; }
+
       .nav {
         flex-direction: row;
         align-items: center;
@@ -419,23 +416,13 @@
         white-space: nowrap;
       }
 
-      .hero {
-        padding-top: 36px;
-      }
+      .hero { padding-top: 36px; }
     }
 
     @media (max-width: 520px) {
-      .hero-buttons .btn {
-        width: 100%;
-      }
-
-      .hero-buttons {
-        width: 100%;
-      }
-
-      .nav-actions {
-        width: auto;
-      }
+      .hero-buttons .btn { width: 100%; }
+      .hero-buttons { width: 100%; }
+      .nav-actions { width: auto; }
 
       .logo {
         width: 210px;
@@ -447,19 +434,20 @@
         font-size: 0.75rem;
       }
 
-      .form-section {
-        padding: 26px;
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
       }
 
-      section {
-        padding: 46px 18px;
-      }
+      .service-price { text-align: left; }
+      .form-section { padding: 26px; }
+      section { padding: 46px 18px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="topbar">Trusted in-home tech support across the Las Vegas Valley • Weekend and evening appointments available</div>
+  <div class="topbar">Premium in-home tech support across the Las Vegas Valley • 2026 service pricing now available</div>
 
   <header>
     <div class="nav">
@@ -478,82 +466,98 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow">Friendly in-home tech support in Las Vegas</div>
-          <h1>Patient, professional tech help in the comfort of your home.</h1>
-          <p>Friendly Tech Concierge provides in-home tech support for seniors, families, and anyone who wants straightforward, reliable help with everyday technology. Whether you need help with a computer, printer, Wi‑Fi, smart TV, phone, passwords, or a new device setup, the goal is simple: make technology feel less stressful and easier to use.</p>
+          <div class="eyebrow">Premium in-home tech support in Las Vegas</div>
+          <h1>Patient, friendly technology help for seniors, families, and busy households.</h1>
+          <p>Friendly Tech Concierge provides in-home tech support throughout the Las Vegas Valley. Get help with computers, phones, tablets, Wi-Fi, printers, smart TVs, passwords, email, data transfers, technology lessons, and scam prevention in a way that feels respectful and easy to understand.</p>
 
           <div class="trust-row">
-            <span class="pill">Clear, patient explanations</span>
-            <span class="pill">Senior-friendly support</span>
-            <span class="pill">No confusing jargon</span>
-            <span class="pill">Local Las Vegas service</span>
+            <span class="pill">Senior-focused assistance</span>
+            <span class="pill">Clear explanations</span>
+            <span class="pill">In-home convenience</span>
+            <span class="pill">Honest recommendations</span>
           </div>
 
           <div class="hero-buttons">
             <a class="btn btn-primary" href="#appointment">Tell me what you need help with</a>
-            <a class="btn btn-secondary" href="#services">View Services</a>
+            <a class="btn btn-secondary" href="#pricing">View Pricing</a>
           </div>
         </div>
 
         <aside class="headshot-card">
           <img src="images/headshot.png" alt="Friendly Tech Concierge owner and in-home tech support specialist" />
           <h2>Meet Your Local Tech Concierge</h2>
-          <p>I believe tech support should feel approachable, respectful, and easy to understand. My approach is simple: solve the problem, explain things clearly, and help people feel more confident using their technology afterward.</p>
+          <p>I believe tech support should be patient, friendly, and practical. My goal is to solve the issue, explain what happened in plain English, and help you feel more confident with your technology.</p>
         </aside>
       </div>
     </section>
+
     <section id="services">
-      <h2 class="section-title">Reliable help for the technology you use every day.</h2>
-      <p class="section-intro">Many people feel overwhelmed or frustrated when technology stops working. Friendly Tech Concierge focuses on practical solutions, patient guidance, and making sure people feel comfortable asking questions along the way.</p>
+      <h2 class="section-title">Help for the technology you use every day.</h2>
+      <p class="section-intro">Whether something stopped working or you simply want to learn how to use a device better, Friendly Tech Concierge offers practical support without judgment, pressure, or confusing jargon.</p>
 
       <div class="cards">
-        <div class="card"><h3>Phone & Tablet Help</h3><p>Help setting up new phones or tablets, transferring contacts and photos, adjusting settings, installing apps, and learning how to use your device comfortably.</p></div>
-        <div class="card"><h3>Computer Help</h3><p>Support for Windows and Mac computers including setup, troubleshooting, updates, slow performance, software problems, and general computer help.</p></div>
-        <div class="card"><h3>Wi-Fi & Printer Support</h3><p>Help with home Wi‑Fi problems, weak connections, printer setup, wireless printing, and getting devices connected properly.</p></div>
-        <div class="card"><h3>Smart TV & Streaming</h3><p>Setup and troubleshooting for Roku, Fire Stick, smart TVs, streaming apps, remotes, and home entertainment devices.</p></div>
-        <div class="card"><h3>Email & Password Help</h3><p>Assistance with email accounts, password resets, account recovery, safer sign-in practices, and organizing important login information.</p></div>
-        <div class="card"><h3>Senior Tech Lessons</h3><p>One-on-one technology lessons designed for seniors and beginners who want extra time, patience, and hands-on guidance.</p></div>
+        <div class="card"><h3>Computers, Phones & Tablets</h3><p>Setup, troubleshooting, updates, slow device help, app guidance, data transfers, backups, and one-on-one instruction.</p></div>
+        <div class="card"><h3>Wi-Fi, Printers & Smart TVs</h3><p>Help connecting devices, fixing wireless issues, setting up printers, and getting Roku, Fire Stick, or smart TV apps working properly.</p></div>
+        <div class="card"><h3>Email, Passwords & Safety</h3><p>Assistance with email, passwords, account recovery, safer sign-in habits, scam prevention, and practical online safety guidance.</p></div>
       </div>
     </section>
+
     <section id="pricing">
-      <h2 class="section-title">Straightforward pricing and clear communication.</h2>
-      <p class="section-intro">You should know what to expect before the appointment begins. Pricing is discussed ahead of time and additional work is never added without your approval.</p>
+      <h2 class="section-title">Las Vegas Valley service pricing — 2026.</h2>
+      <p class="section-intro">Prices start at the amounts listed below. Final pricing may vary depending on complexity, travel area, device condition, account access issues, and the amount of time required. You will know the expected cost before work begins.</p>
 
-      <div class="cards">
-        <div class="card">
-          <h3>In-Home Tech Visit</h3>
-          <div class="price">$85+</div>
-          <p>Ideal for most setup appointments, troubleshooting visits, and everyday technology support.</p>
-        </div>
-        <div class="card">
-          <h3>Tech Lesson Visit</h3>
-          <div class="price">$85+</div>
-          <p>Perfect for seniors and beginners who want extra time, patient instruction, and hands-on learning.</p>
-        </div>
-        <div class="card">
-          <h3>Multi-Issue Visit</h3>
-          <div class="price">Quote</div>
-          <p>Recommended for larger projects, multiple devices, home office setups, or extended troubleshooting.</p>
-        </div>
+      <div class="pricing-table">
+        <div class="pricing-header"><h3>In-Home Services</h3></div>
+        <div class="pricing-row"><div class="service-name">In-Home Tech Support Visit (First 60 Minutes)</div><div class="service-price">Starting at $95</div></div>
+        <div class="pricing-row"><div class="service-name">Phone or Tablet Setup</div><div class="service-price">Starting at $95</div></div>
+        <div class="pricing-row"><div class="service-name">New Computer Setup</div><div class="service-price">Starting at $135</div></div>
+        <div class="pricing-row"><div class="service-name">Computer Setup + Data Transfer</div><div class="service-price">Starting at $185</div></div>
+        <div class="pricing-row"><div class="service-name">Printer Setup / Troubleshooting</div><div class="service-price">Starting at $125</div></div>
+        <div class="pricing-row"><div class="service-name">Wi-Fi Troubleshooting</div><div class="service-price">Starting at $135</div></div>
+        <div class="pricing-row"><div class="service-name">Smart TV / Roku / Fire Stick Setup</div><div class="service-price">Starting at $105</div></div>
+        <div class="pricing-row"><div class="service-name">Email / Password Assistance</div><div class="service-price">Starting at $95</div></div>
+        <div class="pricing-row"><div class="service-name">Virus / Malware Cleanup</div><div class="service-price">Starting at $165</div></div>
+        <div class="pricing-row"><div class="service-name">Slow Computer Tune-Up</div><div class="service-price">Starting at $145</div></div>
+        <div class="pricing-row"><div class="service-name">Data Transfer / Backup Help</div><div class="service-price">Starting at $145</div></div>
+        <div class="pricing-row"><div class="service-name">Senior Technology Training</div><div class="service-price">Starting at $85</div></div>
+        <div class="pricing-row"><div class="service-name">Scam Prevention & Safety Session</div><div class="service-price">Starting at $125</div></div>
+        <div class="pricing-row"><div class="service-name">Family Tech Checkup Visit</div><div class="service-price">Starting at $175</div></div>
       </div>
 
-      <div class="note"><strong>Pricing note:</strong> Most appointments begin at $85 for the first hour. If additional time or outside services are needed, everything is discussed clearly before moving forward.</div>
+      <div class="pricing-table">
+        <div class="pricing-header"><h3>Remote Support</h3></div>
+        <div class="pricing-row"><div class="service-name">Remote Support — 30 Minutes</div><div class="service-price">Starting at $45</div></div>
+        <div class="pricing-row"><div class="service-name">Remote Support — 60 Minutes</div><div class="service-price">Starting at $75</div></div>
+      </div>
+
+      <div class="pricing-table">
+        <div class="pricing-header"><h3>Monthly Support Plans</h3></div>
+        <div class="pricing-row"><div class="service-name">Peace of Mind Plan</div><div class="service-price">Starting at $39/month</div></div>
+        <div class="pricing-row"><div class="service-name">Concierge Care Plan</div><div class="service-price">Starting at $99/month</div></div>
+        <div class="pricing-row"><div class="service-name">Family Support Plan</div><div class="service-price">Starting at $129/month</div></div>
+      </div>
+
+      <div class="note"><strong>Important notes:</strong> Pricing may vary depending on complexity. Additional labor beyond the first hour is billed separately. Large multi-device projects may require custom quotes. Hardware purchases are not included unless specified.</div>
     </section>
+
     <section class="split">
       <div class="family-box">
-        <h2 class="section-title">Helping a parent or family member with technology?</h2>
-        <p>Many clients are referred by adult children who want trustworthy, patient technology help for a parent or loved one. Every visit is handled respectfully, without pressure or embarrassment.</p>
+        <h2 class="section-title">What makes the service different?</h2>
+        <p>This business is built around trust, patience, and helping people understand their technology instead of making them feel rushed or embarrassed.</p>
         <ul>
-          <li>Patient in-home support without judgment</li>
-          <li>Simple explanations that are easy to follow</li>
-          <li>Optional follow-up summary for family members</li>
-          <li>Guidance on online safety and common scams</li>
+          <li>Friendly and patient support</li>
+          <li>Senior-focused assistance</li>
+          <li>Clear explanations without confusion</li>
+          <li>In-home convenience</li>
+          <li>Honest recommendations</li>
+          <li>Help setting up and understanding devices</li>
+          <li>Technology lessons available</li>
         </ul>
       </div>
 
       <div class="boundary-box">
         <h2 class="section-title">Services intentionally not offered.</h2>
-        <p>Friendly Tech Concierge focuses on practical in-home support and troubleshooting. The business does not provide:</p>
+        <p>Friendly Tech Concierge focuses on practical in-home support, setup, troubleshooting, and education. The business does not provide:</p>
         <ul>
           <li>Phone screen repair</li>
           <li>Laptop screen replacement</li>
@@ -563,39 +567,31 @@
         </ul>
       </div>
     </section>
+
     <section>
       <h2 class="section-title">What to expect from your appointment.</h2>
-      <p class="section-intro">The process is designed to be straightforward, comfortable, and easy to follow from start to finish.</p>
+      <p class="section-intro">The process is designed to be straightforward, respectful, and easy to follow from start to finish.</p>
 
       <div class="process">
-        <div class="card">
-          <div class="step-number">1</div>
-          <h3>Reach out with the issue</h3>
-          <p>Call, text, or complete the form with a brief description of the problem and the best way to contact you.</p>
-        </div>
-        <div class="card">
-          <div class="step-number">2</div>
-          <h3>Review the details together</h3>
-          <p>I will follow up to discuss the issue, appointment timing, service area, and expected pricing before the visit.</p>
-        </div>
-        <div class="card">
-          <div class="step-number">3</div>
-          <h3>Receive friendly, in-home support</h3>
-          <p>The goal is to solve the issue, answer your questions clearly, and leave you feeling more comfortable with your technology.</p>
-        </div>
+        <div class="card"><div class="step-number">1</div><h3>Reach out with the issue</h3><p>Call, text, or complete the form with a brief description of the problem and the best way to contact you.</p></div>
+        <div class="card"><div class="step-number">2</div><h3>Review the details together</h3><p>I will follow up to discuss the issue, appointment timing, service area, and expected pricing before the visit.</p></div>
+        <div class="card"><div class="step-number">3</div><h3>Get friendly, professional support</h3><p>The goal is to solve the issue, answer your questions clearly, and leave you feeling more comfortable with your technology.</p></div>
       </div>
     </section>
+
     <section>
       <div class="service-area">
-        <h2 class="section-title">Proudly serving the Las Vegas Valley.</h2>
-        <p class="section-intro">Friendly Tech Concierge provides in-home tech support throughout Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities. Appointment availability may vary based on location and scheduling.</p>
+        <h2 class="section-title">Serving the Las Vegas Valley.</h2>
+        <p class="section-intro">Friendly Tech Concierge provides in-home tech support throughout the Las Vegas Valley, including Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities. Travel fees may apply outside standard service areas.</p>
+        <p><strong>Scheduling:</strong> Appointments are available on weekends with limited evening availability. Advance scheduling is recommended.</p>
       </div>
     </section>
+
     <section id="appointment">
       <div class="form-section">
         <div>
-          <h2 class="section-title">Request in-home tech support.</h2>
-          <p>Use the form below to request help with computers, phones, Wi‑Fi, printers, smart TVs, passwords, email, device setup, or technology lessons.</p>
+          <h2 class="section-title">Request tech support.</h2>
+          <p>Use the form below to request help with computers, phones, tablets, Wi-Fi, printers, smart TVs, passwords, email, data transfer, malware cleanup, scam prevention, or technology lessons.</p>
           <p>After you submit the form, you will receive a follow-up by phone or text to discuss the issue and confirm availability.</p>
           <p><strong>Prefer to call or text?</strong><br />Call/Text: <a href="tel:7025709003">(702) 570-9003</a></p>
         </div>
@@ -613,15 +609,22 @@
           <label for="service">What do you need help with?</label>
           <select id="service" name="service" required>
             <option value="">Choose one</option>
-            <option>Phone or tablet help</option>
-            <option>Computer help</option>
-            <option>Printer setup or troubleshooting</option>
-            <option>Wi-Fi troubleshooting</option>
-            <option>Email or password help</option>
-            <option>Smart TV / Roku / Fire Stick setup</option>
-            <option>Data transfer</option>
-            <option>Virus or malware cleanup</option>
-            <option>Senior tech lesson</option>
+            <option>In-Home Tech Support Visit</option>
+            <option>Phone or Tablet Setup</option>
+            <option>New Computer Setup</option>
+            <option>Computer Setup + Data Transfer</option>
+            <option>Printer Setup / Troubleshooting</option>
+            <option>Wi-Fi Troubleshooting</option>
+            <option>Smart TV / Roku / Fire Stick Setup</option>
+            <option>Email / Password Assistance</option>
+            <option>Virus / Malware Cleanup</option>
+            <option>Slow Computer Tune-Up</option>
+            <option>Data Transfer / Backup Help</option>
+            <option>Senior Technology Training</option>
+            <option>Scam Prevention & Safety Session</option>
+            <option>Family Tech Checkup Visit</option>
+            <option>Remote Support</option>
+            <option>Monthly Support Plan</option>
             <option>Something else</option>
           </select>
 
@@ -630,6 +633,7 @@
 
           <label for="message">Briefly describe the issue</label>
           <textarea id="message" name="message" placeholder="Example: My printer stopped connecting to Wi-Fi, or I need help setting up a new iPhone." required></textarea>
+
           <input type="hidden" name="_subject" value="New Friendly Tech Concierge Appointment Request" />
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
@@ -641,10 +645,9 @@
   </main>
 
   <footer>
-    <!-- EDIT BUSINESS INFO: Footer contact details -->
     <p><strong>Friendly Tech Concierge</strong></p>
     <p>Las Vegas, Nevada • Call/Text: <a href="tel:7025709003">(702) 570-9003</a> • <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a></p>
-    <p>Trusted in-home tech support for seniors, families, and everyday computer and device users across Las Vegas.</p>
+    <p>Premium in-home tech support for seniors, families, and busy households across the Las Vegas Valley.</p>
   </footer>
 </body>
 </html>
