@@ -562,7 +562,7 @@
       gap: 16px;
       flex-wrap: wrap;
     }
-@media (min-width: 1000px) {
+@media (min-width: 921px) and (max-width: 1199px) {
   .brand img {
     height: 145px;
   }
@@ -630,6 +630,24 @@
       h1 { font-size: 2.22rem; }
       .card, .hero-card { padding: 23px; }
     }
+    @media (max-width: 420px) {
+  .brand img { height: 92px; }
+  h1 { font-size: 2.22rem; }
+  .card, .hero-card { padding: 23px; }
+}
+
+/* Desktop optimization */
+@media (min-width: 921px) {
+  body {
+    font-size: 18px;
+  }
+
+  .container {
+    width: min(1160px, 90%);
+  }
+
+  /* rest of the desktop CSS goes here */
+}
   </style>
 </head>
 <body>
