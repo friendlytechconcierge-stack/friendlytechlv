@@ -572,17 +572,35 @@
   }
 
   .hero {
-    padding: 86px 0 78px;
+    padding: 72px 0 72px;
   }
 
   .hero-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 64px;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .hero h1 {
+    max-width: 760px;
+  }
+
+  .lead {
+    max-width: 690px;
+  }
+
+  .hero-actions {
+    align-items: center;
   }
 
   .hero-card {
-    max-width: 460px;
+    max-width: 430px;
     justify-self: end;
+    margin-top: 34px;
+  }
+
+  .trust-row {
+    max-width: 690px;
   }
 
   .service-card,
