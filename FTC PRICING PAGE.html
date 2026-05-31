@@ -66,17 +66,16 @@
     .logo-wrap {
       display: flex;
       align-items: center;
-      width: 360px;
-      height: 74px;
-      overflow: hidden;
+      width: 500px;
+      overflow: visible;
     }
 
     .logo {
-      width: 360px;
+      width: 100%;
+      max-width: 500px;
       height: auto;
       object-fit: contain;
-      transform: scale(1.25);
-      transform-origin: left center;
+      transform: none;
     }
 
     .nav-actions {
@@ -387,20 +386,21 @@
         justify-content: space-between;
         padding: 6px 16px;
         gap: 12px;
-        height: 76px;
+        min-height: 90px;
       }
 
       .logo-wrap {
-        width: 260px;
-        height: 64px;
+        width: 340px;
         min-width: auto;
         flex-shrink: 1;
+        overflow: visible;
       }
 
       .logo {
-        width: 260px;
+        width: 100%;
+        max-width: 340px;
         height: auto;
-        transform: scale(1.22);
+        transform: none;
       }
 
       .nav-actions {
@@ -425,8 +425,10 @@
       .nav-actions { width: auto; }
 
       .logo {
-        width: 210px;
-        transform: scale(1.2);
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        transform: none;
       }
 
       .nav-actions .btn {
@@ -477,8 +479,8 @@
           </div>
         </div>
         <aside class="headshot-card">
-          <h2>Starting at $75</h2>
-          <p>Most basic in-home support visits and senior technology training sessions start at $75.</p>
+          <h2>Simple, Upfront Pricing</h2>
+          <p>No hidden fees. You'll know the expected cost before work begins.</p>
         </aside>
       </div>
     </section>
