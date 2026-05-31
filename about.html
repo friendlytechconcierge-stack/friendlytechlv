@@ -64,20 +64,20 @@
     }
 
     .logo-wrap {
-      display: flex;
-      align-items: center;
-      width: 360px;
-      height: 74px;
-      overflow: hidden;
-    }
+  display: flex;
+  align-items: center;
+  width: 420px;
+  height: auto;
+  overflow: visible;
+}
 
     .logo {
-      width: 360px;
-      height: auto;
-      object-fit: contain;
-      transform: scale(1.25);
-      transform-origin: left center;
-    }
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  transform: none;
+}
 
     .nav-actions {
       display: flex;
@@ -391,18 +391,16 @@
       }
 
       .logo-wrap {
-        width: 260px;
-        height: 64px;
-        min-width: auto;
-        flex-shrink: 1;
-      }
+  width: 320px;
+  height: auto;
+}
 
       .logo {
-        width: 260px;
-        height: auto;
-        transform: scale(1.22);
-      }
-
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  transform: none;
+}
       .nav-actions {
         display: flex;
         flex-wrap: nowrap;
@@ -425,9 +423,11 @@
       .nav-actions { width: auto; }
 
       .logo {
-        width: 210px;
-        transform: scale(1.2);
-      }
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+
 
       .nav-actions .btn {
         padding: 8px 10px;
