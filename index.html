@@ -191,6 +191,34 @@
     .headshot-card h2 { margin: 16px 0 6px; font-size: 1.4rem; }
     .headshot-card p { font-size: 1rem; margin: 0; color: var(--muted); }
 
+    .home-trust-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(18, 50, 74, 0.10);
+    }
+
+    .home-trust-card h2 {
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .trust-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trust-item {
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
     section {
       max-width: 1120px;
       margin: auto;
@@ -470,22 +498,34 @@
         <div>
           <div class="eyebrow">Premium in-home tech support in Las Vegas</div>
           <h1>Patient, friendly technology help for seniors, families, and busy households.</h1>
-          <p>Friendly Tech Concierge provides in-home tech support throughout the Las Vegas Valley. Get help with computers, phones, tablets, Wi-Fi, printers, smart TVs, passwords, email, data transfers, technology lessons, and scam prevention in a way that feels respectful and easy to understand.</p>
+          <p>Technology should not feel frustrating, confusing, or overwhelming. Friendly Tech Concierge provides professional in-home tech support throughout the Las Vegas Valley with clear explanations, respectful service, and practical help that makes everyday technology easier to use.</p>
+          <p>Get help with computers, phones, tablets, Wi-Fi, printers, smart TVs, passwords, email, data transfers, scam prevention, and one-on-one technology lessons.</p>
           <div class="trust-row">
             <span class="pill">Senior-focused assistance</span>
             <span class="pill">Clear explanations</span>
             <span class="pill">In-home convenience</span>
             <span class="pill">Honest recommendations</span>
+            <span class="pill">Professional IT experience</span>
           </div>
           <div class="hero-buttons">
             <a class="btn btn-primary" href="#appointment">Tell me what you need help with</a>
             <a class="btn btn-secondary" href="pricing.html">View Pricing</a>
           </div>
         </div>
-        <aside class="headshot-card">
-          <img src="images/headshot.png" alt="Friendly Tech Concierge owner and in-home tech support specialist" />
-          <h2>Meet Your Local Tech Concierge</h2>
-          <p>Tech support should be patient, friendly, and practical. The goal is to solve the issue, explain what happened in plain English, and help you feel more confident with your technology.</p>
+
+        <aside class="home-trust-card">
+          <h2>Technology help without the stress.</h2>
+          <p>Friendly Tech Concierge is designed for people who want patient, professional help without feeling rushed, judged, or talked down to.</p>
+          <div class="trust-list">
+            <div class="trust-item">✓ Senior-focused assistance</div>
+            <div class="trust-item">✓ Clear explanations in plain English</div>
+            <div class="trust-item">✓ In-home convenience</div>
+            <div class="trust-item">✓ Honest recommendations</div>
+            <div class="trust-item">✓ Technology lessons available</div>
+          </div>
+          <div class="hero-buttons">
+            <a class="btn btn-secondary" href="about.html">Meet Your Tech Concierge</a>
+          </div>
         </aside>
       </div>
     </section>
