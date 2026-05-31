@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing | Friendly Tech Concierge Las Vegas</title>
+  <meta name="description" content="View Friendly Tech Concierge pricing for in-home tech support, computer setup, phone setup, printer help, Wi-Fi troubleshooting, smart TV setup, malware cleanup, training, and remote support." />
+
+  <style>
+    :root {
+      --navy: #12324a;
+      --blue: #246b8f;
+      --light-blue: #eaf5f8;
+      --cream: #faf7f0;
+      --gold: #d8a94f;
+      --text: #263238;
+      --muted: #667085;
+      --white: #ffffff;
+      --border: #dde7ea;
+      --success: #ecfdf3;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.95rem;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      overflow: visible;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 20px;
+      gap: 18px;
+      height: 86px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      width: 360px;
+      height: 74px;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 360px;
+      height: auto;
+      object-fit: contain;
+      transform: scale(1.25);
+      transform-origin: left center;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(18, 50, 74, 0.12);
+    }
+
+    .btn-primary { background: var(--gold); color: #1e293b; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: var(--border); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--light-blue), var(--cream));
+      padding: 72px 20px;
+    }
+
+    .hero-grid {
+      max-width: 1120px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+    }
+
+    h2, h3 { color: var(--navy); }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 650px;
+      color: #344054;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .headshot-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 16px 40px rgba(18, 50, 74, 0.12);
+      text-align: center;
+    }
+
+    .headshot-card img {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 4px solid var(--light-blue);
+    }
+
+    .headshot-card h2 { margin: 16px 0 6px; font-size: 1.4rem; }
+    .headshot-card p { font-size: 1rem; margin: 0; color: var(--muted); }
+
+    section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 64px 20px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(18, 50, 74, 0.06);
+    }
+
+    .card h3 { margin-top: 0; font-size: 1.25rem; }
+
+    .pricing-table {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(18, 50, 74, 0.06);
+      margin-bottom: 24px;
+    }
+
+    .pricing-header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 22px;
+    }
+
+    .pricing-header h3 {
+      color: var(--white);
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .pricing-row {
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      gap: 16px;
+      padding: 16px 22px;
+      border-top: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .pricing-row:first-of-type { border-top: none; }
+
+    .service-name { font-weight: 700; color: var(--text); }
+    .service-price { font-weight: 900; color: var(--blue); text-align: right; }
+
+    .note {
+      background: #fff8e6;
+      border: 1px solid #f2d690;
+      color: #5f4300;
+      padding: 16px;
+      border-radius: 18px;
+      margin-top: 20px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin: 8px 0; }
+
+    .family-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .family-box h2 { color: var(--white); }
+    .family-box p { color: #d9e6ea; }
+    .family-box li { color: var(--white); }
+
+    .boundary-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: #1e293b;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .form-section {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      border-radius: 32px;
+      color: var(--white);
+      padding: 42px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .form-section h2 { color: var(--white); margin-top: 0; }
+    .form-section p { color: #e6f2f5; }
+
+    form {
+      background: var(--white);
+      color: var(--text);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    label {
+      display: block;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 14px 0 6px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font: inherit;
+      background: #fbfdfe;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .small-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .service-area {
+      background: var(--success);
+      border: 1px solid #b7efc5;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    footer p { margin: 6px 0; }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split, .form-section { grid-template-columns: 1fr; }
+      .cards, .process { grid-template-columns: 1fr; }
+
+      .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 16px;
+        gap: 12px;
+        height: 76px;
+      }
+
+      .logo-wrap {
+        width: 260px;
+        height: 64px;
+        min-width: auto;
+        flex-shrink: 1;
+      }
+
+      .logo {
+        width: 260px;
+        height: auto;
+        transform: scale(1.22);
+      }
+
+      .nav-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        justify-content: flex-end;
+      }
+
+      .nav-actions .btn {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+
+      .hero { padding-top: 36px; }
+    }
+
+    @media (max-width: 520px) {
+      .hero-buttons .btn { width: 100%; }
+      .hero-buttons { width: 100%; }
+      .nav-actions { width: auto; }
+
+      .logo {
+        width: 210px;
+        transform: scale(1.2);
+      }
+
+      .nav-actions .btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+
+      .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .service-price { text-align: left; }
+      .form-section { padding: 26px; }
+      section { padding: 46px 18px; }
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="topbar">Premium in-home tech support across the Las Vegas Valley • Weekend and limited evening appointments available</div>
+
+  <header>
+    <div class="nav">
+      <a class="logo-wrap" href="index.html" aria-label="Friendly Tech Concierge home">
+        <img class="logo" src="Friendly Tech Concierge Logo.png" alt="Friendly Tech Concierge logo" />
+      </a>
+      <nav class="nav-actions" aria-label="Main navigation">
+        <a class="btn btn-secondary" href="index.html">Home</a>
+        <a class="btn btn-secondary" href="about.html">About</a>
+        <a class="btn btn-secondary" href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Friendly Tech Concierge Pricing</div>
+          <h1>Clear service pricing for in-home and remote tech support.</h1>
+          <p>Prices are listed upfront so you know what to expect before scheduling. Final pricing may vary if the issue requires extra time, multiple devices, hardware purchases, unusual travel, or custom work.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+            <a class="btn btn-secondary" href="tel:7025709003">Call Now</a>
+          </div>
+        </div>
+        <aside class="headshot-card">
+          <h2>Starting at $75</h2>
+          <p>Most basic in-home support visits and senior technology training sessions start at $75.</p>
+        </aside>
+      </div>
+    </section>
+    <section id="pricing">
+      <h2 class="section-title">Las Vegas Valley service pricing.</h2>
+      <p class="section-intro">You will know the expected cost before work begins. Hardware, replacement parts, subscriptions, and accessories are not included unless specifically stated.</p>
+      <div class="pricing-table">
+        <div class="pricing-header"><h3>In-Home Services</h3></div>
+        <div class="pricing-row"><div class="service-name">In-Home Tech Support Visit</div><div class="service-price">$75</div></div>
+        <div class="pricing-row"><div class="service-name">Phone / Tablet Setup</div><div class="service-price">$75</div></div>
+        <div class="pricing-row"><div class="service-name">New Computer Setup</div><div class="service-price">$95</div></div>
+        <div class="pricing-row"><div class="service-name">Computer Setup + Basic Data Transfer</div><div class="service-price">$135</div></div>
+        <div class="pricing-row"><div class="service-name">Printer Setup / Troubleshooting</div><div class="service-price">$95</div></div>
+        <div class="pricing-row"><div class="service-name">Wi-Fi Troubleshooting</div><div class="service-price">$95</div></div>
+        <div class="pricing-row"><div class="service-name">Smart TV / Roku / Fire Stick Setup</div><div class="service-price">$85</div></div>
+        <div class="pricing-row"><div class="service-name">Email / Password Assistance</div><div class="service-price">$75</div></div>
+        <div class="pricing-row"><div class="service-name">Virus / Malware Cleanup</div><div class="service-price">$135</div></div>
+        <div class="pricing-row"><div class="service-name">Slow Computer Optimization</div><div class="service-price">$115</div></div>
+        <div class="pricing-row"><div class="service-name">Data Transfer / Backup Assistance</div><div class="service-price">$115</div></div>
+        <div class="pricing-row"><div class="service-name">Senior Technology Training</div><div class="service-price">$75</div></div>
+        <div class="pricing-row"><div class="service-name">Scam Prevention Session</div><div class="service-price">$95</div></div>
+        <div class="pricing-row"><div class="service-name">Family Tech Checkup</div><div class="service-price">$150</div></div>
+      </div>
+      <div class="pricing-table">
+        <div class="pricing-header"><h3>Remote Support</h3></div>
+        <div class="pricing-row"><div class="service-name">Remote Support — 30 Minutes</div><div class="service-price">$35</div></div>
+        <div class="pricing-row"><div class="service-name">Remote Support — 60 Minutes</div><div class="service-price">$60</div></div>
+      </div>
+      <div class="note"><strong>Important notes:</strong> Pricing may vary depending on complexity. Additional time, large multi-device projects, hardware purchases, replacement parts, and advanced recovery work may require a custom quote.</div>
+    </section>
+    <section>
+      <div style="text-align:center;">
+        <h2 class="section-title">Ready to schedule?</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;">Send a request with a short description of the issue. You will receive a follow-up before the appointment is confirmed.</p>
+        <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Friendly Tech Concierge</strong></p>
+    <p>Las Vegas, Nevada • Call/Text: <a href="tel:7025709003">(702) 570-9003</a> • <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a></p>
+    <p>Premium in-home tech support for seniors, families, and busy households across the Las Vegas Valley.</p>
+  </footer>
+</body>
+</html>
