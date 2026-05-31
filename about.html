@@ -64,20 +64,19 @@
     }
 
     .logo-wrap {
-  display: flex;
-  align-items: center;
-  width: 420px;
-  height: auto;
-  overflow: visible;
-}
+      display: flex;
+      align-items: center;
+      width: 500px;
+      overflow: visible;
+    }
 
     .logo {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  object-fit: contain;
-  transform: none;
-}
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      transform: none;
+    }
 
     .nav-actions {
       display: flex;
@@ -387,20 +386,23 @@
         justify-content: space-between;
         padding: 6px 16px;
         gap: 12px;
-        height: 76px;
+        min-height: 90px;
       }
 
       .logo-wrap {
-  width: 320px;
-  height: auto;
-}
+        width: 340px;
+        min-width: auto;
+        flex-shrink: 1;
+        overflow: visible;
+      }
 
       .logo {
-  width: 100%;
-  max-width: 320px;
-  height: auto;
-  transform: none;
-}
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        transform: none;
+      }
+
       .nav-actions {
         display: flex;
         flex-wrap: nowrap;
@@ -423,11 +425,11 @@
       .nav-actions { width: auto; }
 
       .logo {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-}
-
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        transform: none;
+      }
 
       .nav-actions .btn {
         padding: 8px 10px;
@@ -470,6 +472,7 @@
         <div>
           <div class="eyebrow">Meet Your Local Tech Concierge</div>
           <h1>Hi, I’m Jontae.</h1>
+
           <p>I’m a professional IT Technician and the founder of Friendly Tech Concierge.</p>
 
           <p>Over the years, I’ve helped hundreds of people with technology problems ranging from computers and phones to printers, Wi-Fi, smart TVs, email accounts, and online safety concerns.</p>
@@ -488,7 +491,7 @@
 
         <aside class="headshot-card">
           <img src="images/headshot.png" alt="Jontae, founder of Friendly Tech Concierge" />
-          <h2>Jontae - Founder & Tech Concierge</h2>
+          <h2>Jontae — Founder & Tech Concierge</h2>
           <p>Professional IT Technician serving seniors, families, retirees, and busy households throughout the Las Vegas Valley.</p>
         </aside>
       </div>
