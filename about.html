@@ -5,34 +5,742 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Friendly Tech Concierge | Patient In-Home Tech Help in Las Vegas</title>
   <meta name="description" content="Meet Jontae, founder of Friendly Tech Concierge. Patient in-home technology help in Las Vegas for seniors, retirees, adult children helping parents, busy adults, and non-technical households." />
-  <link rel="canonical" href="https://friendlytechlv.com/about.html" />
-  <link rel="stylesheet" href="css/styles.css" />
+
+  <style>
+    :root {
+      --navy: #12324a;
+      --blue: #246b8f;
+      --light-blue: #eaf5f8;
+      --cream: #faf7f0;
+      --gold: #d8a94f;
+      --text: #263238;
+      --muted: #667085;
+      --white: #ffffff;
+      --border: #dde7ea;
+      --success: #ecfdf3;
+      --soft-gold: #fff8e6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .topbar {
+      background: var(--navy);
+      color: var(--white);
+      font-size: 0.95rem;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      overflow: visible;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 20px;
+      gap: 18px;
+      height: 86px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      width: 500px;
+      overflow: visible;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      object-fit: contain;
+      transform: none;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(18, 50, 74, 0.12);
+    }
+
+    .btn-primary { background: var(--gold); color: #1e293b; }
+    .btn-secondary { background: var(--white); color: var(--navy); border-color: var(--border); }
+    .btn-dark { background: var(--navy); color: var(--white); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--light-blue), var(--cream));
+      padding: 72px 20px;
+    }
+
+    .hero-grid {
+      max-width: 1120px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+    }
+
+    h2, h3 { color: var(--navy); }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 680px;
+      color: #344054;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 9px 13px;
+      font-weight: 800;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .headshot-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 16px 40px rgba(18, 50, 74, 0.12);
+      text-align: center;
+    }
+
+    .headshot-card img {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 4px solid var(--light-blue);
+    }
+
+    .headshot-card h2 { margin: 16px 0 6px; font-size: 1.4rem; }
+    .headshot-card p { font-size: 1rem; margin: 0; color: var(--muted); }
+
+    .mini-trust-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      text-align: left;
+    }
+
+    .mini-trust-item {
+      background: var(--light-blue);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 11px 13px;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    section {
+      max-width: 1120px;
+      margin: auto;
+      padding: 64px 20px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .section-intro {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .cards.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(18, 50, 74, 0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    ul { padding-left: 20px; margin-bottom: 0; }
+    li { margin: 8px 0; }
+
+    .family-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .family-box h2,
+    .family-box h3 {
+      color: var(--white);
+    }
+
+    .family-box p {
+      color: #d9e6ea;
+    }
+
+    .family-box li {
+      color: var(--white);
+    }
+
+    .boundary-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .warm-box {
+      background: var(--soft-gold);
+      border: 1px solid #f2d690;
+      color: #5f4300;
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .warm-box h2,
+    .warm-box h3 {
+      color: var(--navy);
+    }
+
+    .service-area {
+      background: var(--success);
+      border: 1px solid #b7efc5;
+      border-radius: 28px;
+      padding: 34px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      color: #1e293b;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .quote-box {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      color: var(--white);
+      border-radius: 32px;
+      padding: 42px;
+      text-align: center;
+    }
+
+    .quote-box h2 {
+      color: var(--white);
+    }
+
+    .quote-box p {
+      color: #e6f2f5;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+    }
+
+    .callout-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    footer p { margin: 6px 0; }
+
+    @media (max-width: 1000px) {
+      .cards.four { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .callout-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .cards.two,
+      .cards.four,
+      .process {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 16px;
+        gap: 12px;
+        min-height: 90px;
+        height: auto;
+      }
+
+      .logo-wrap {
+        width: 340px;
+        min-width: auto;
+        flex-shrink: 1;
+        overflow: visible;
+      }
+
+      .logo {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        transform: none;
+      }
+
+      .nav-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        justify-content: flex-end;
+      }
+
+      .nav-actions .btn {
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+      }
+
+      .hero { padding-top: 36px; }
+    }
+
+    @media (max-width: 520px) {
+      .topbar {
+        font-size: 0.85rem;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-buttons {
+        width: 100%;
+      }
+
+      .nav-actions {
+        width: auto;
+      }
+
+      .logo-wrap {
+        width: 300px;
+        max-width: 60vw;
+      }
+
+      .logo {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        transform: none;
+      }
+
+      .nav-actions .btn {
+        padding: 8px 10px;
+        font-size: 0.75rem;
+      }
+
+      .boundary-box,
+      .family-box,
+      .warm-box,
+      .service-area,
+      .quote-box {
+        padding: 26px;
+      }
+
+      section {
+        padding: 46px 18px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
   <div class="topbar">Patient in-home technology help in Las Vegas • Weekend and limited evening appointments available</div>
-  <header class="site-header"><div class="nav"><a class="logo-wrap" href="index.html" aria-label="Friendly Tech Concierge home"><img class="logo" src="images/Friendly Tech Concierge Logo.png" alt="Friendly Tech Concierge logo" /></a><nav class="nav-actions" aria-label="Main navigation"><a class="btn btn-secondary" href="index.html">Home</a><a class="btn btn-current" href="about.html" aria-current="page">About</a><a class="btn btn-secondary" href="pricing.html">Services</a><a class="btn btn-secondary" href="free-tech-help.html">Free Tech Help</a><a class="btn btn-primary" href="index.html#appointment">Request Help</a></nav></div></header>
-  <main id="main">
-    <section class="hero"><div class="hero-grid"><div><div class="eyebrow">Meet your local tech concierge</div><h1>Hi, I’m Jontae. I help make technology feel less stressful.</h1><p>I’m a professional IT Technician and the founder of Friendly Tech Concierge, a local Las Vegas service for people who want patient, trustworthy help with everyday technology.</p><p>If your printer will not print, your phone feels confusing, your Wi-Fi keeps dropping, your smart TV will not cooperate, or you are worried about passwords and scams, I can help you sort through it calmly.</p><p>You do not need to know the right technical words. You can just tell me what is happening, and I will help you figure out the next step.</p><div class="trust-row"><span class="pill">No rushing</span><span class="pill">No jargon</span><span class="pill">No judgment</span><span class="pill">Clear pricing</span><span class="pill">Professional IT experience</span></div><div class="hero-buttons"><a class="btn btn-primary" href="index.html#appointment">Tell Me What You Need Help With</a><a class="btn btn-secondary" href="tel:7025709003">Call/Text (702) 570-9003</a></div></div><aside class="card founder-card"><img src="images/headshot.png" data-fallback-initials="JC" alt="Jontae, founder of Friendly Tech Concierge" /><h2>Jontae — Founder & Tech Concierge</h2><p>Professional IT Technician serving seniors, retirees, families, and busy households throughout the Las Vegas Valley.</p><div class="mini-list"><div class="mini-item">✓ I explain things in plain English</div><div class="mini-item">✓ I ask before accessing accounts</div><div class="mini-item">✓ I can leave written notes after the visit</div><div class="mini-item">✓ I focus on practical, everyday tech help</div></div></aside></div></section>
 
-    <section><h2 class="section-title">Why I started Friendly Tech Concierge.</h2><p class="section-intro">Technology support should feel helpful, respectful, and easy to understand. Too often, it does not.</p><div class="split"><div class="boundary-box"><p>I have seen people avoid asking for help because they are afraid of looking foolish. I have seen families lose hours trying to solve simple tech problems. I have seen seniors feel left behind when phones, apps, passwords, and online accounts change faster than anyone explains them.</p><p>Friendly Tech Concierge was created for those moments.</p><p>My goal is to give you a calm, trustworthy person to call when technology gets frustrating, confusing, or overwhelming.</p></div><div class="warm-box"><h3>The service is built around one simple idea:</h3><p><strong>You should not have to feel embarrassed just because technology is not working.</strong></p><p>I will meet you where you are, explain what I am doing, and help you feel more comfortable using the technology already in your home.</p></div></div></section>
+  <header>
+    <div class="nav">
+      <a class="logo-wrap" href="index.html" aria-label="Friendly Tech Concierge home">
+        <img class="logo" src="Friendly Tech Concierge Logo.png" alt="Friendly Tech Concierge logo" />
+      </a>
+      <nav class="nav-actions" aria-label="Main navigation">
+        <a class="btn btn-secondary" href="index.html">Home</a>
+        <a class="btn btn-secondary" href="about.html">About</a>
+        <a class="btn btn-secondary" href="pricing.html">Services</a>
+        <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+      </nav>
+    </div>
+  </header>
 
-    <section><h2 class="section-title">Who I help.</h2><p class="section-intro">Friendly Tech Concierge is designed for people who want practical help without being rushed, judged, or talked down to.</p><div class="cards four"><div class="card"><h3>Seniors & Retirees</h3><p>Patient one-on-one help with phones, tablets, computers, printers, streaming, passwords, and online safety.</p></div><div class="card"><h3>Adult Children Helping Parents</h3><p>If your loved one lives in Las Vegas, I can provide trusted in-home help and, with permission, keep you updated.</p></div><div class="card"><h3>Busy Adults</h3><p>For people who do not have time to fight with setup, Wi-Fi, printers, apps, smart TVs, or account issues.</p></div><div class="card"><h3>Non-Technical Households</h3><p>Friendly support for anyone who wants technology explained clearly and fixed without confusion.</p></div></div></section>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Meet Your Local Tech Concierge</div>
+          <h1>Hi, I’m Jontae. I help make technology feel less stressful.</h1>
 
-    <section><div class="quote-box"><h2 class="section-title">No rushing. No jargon. No judgment.</h2><p>That is not just a slogan. It is how the appointment should feel. You can ask questions, take notes, slow down, or ask me to explain something again.</p><div class="hero-buttons" style="justify-content:center;"><a class="btn btn-primary" href="index.html#appointment">Request Help</a><a class="btn btn-secondary" href="pricing.html">View Services</a></div></div></section>
+          <p>I’m a professional IT Technician and the founder of Friendly Tech Concierge, a local Las Vegas service for people who want patient, trustworthy help with everyday technology.</p>
 
-    <section><h2 class="section-title">What I can help with.</h2><p class="section-intro">Most visits are everyday technology problems: the things that make life harder when they stop working or stop making sense.</p><div class="cards"><div class="card"><h3>Phones, Tablets & Computers</h3><p>New device setup, app help, updates, slow devices, data transfer, backups, photo organization, and basic training.</p></div><div class="card"><h3>Wi-Fi, Printers & Smart TVs</h3><p>Wireless troubleshooting, printer setup, streaming apps, Roku, Fire Stick, smart TV settings, and connection problems.</p></div><div class="card"><h3>Email, Passwords & Safety</h3><p>Email help, account recovery, password organization, scam prevention, safer sign-in habits, and basic online safety guidance.</p></div><div class="card"><h3>Technology Lessons</h3><p>One-on-one guidance for people who want to feel more confident using the devices and apps they already have.</p></div><div class="card"><h3>Family Tech Checkups</h3><p>A practical review of devices, accounts, updates, backups, passwords, and common safety concerns around the home.</p></div><div class="card"><h3>Smart Home Basics</h3><p>Help with everyday connected devices such as doorbells, cameras, smart plugs, speakers, and app-connected home devices.</p></div></div></section>
+          <p>If your printer will not print, your phone feels confusing, your Wi-Fi keeps dropping, your smart TV will not cooperate, or you are worried about passwords and scams, I can help you sort through it calmly.</p>
 
-    <section><h2 class="section-title">What makes this different.</h2><p class="section-intro">The visit should feel more personal than a repair ticket and more useful than someone quickly fixing the issue without explaining anything.</p><div class="process"><div class="card"><div class="step-number">1</div><h3>I listen first</h3><p>You can describe the problem in normal words. I will ask questions, confirm what you need, and explain the likely next step.</p></div><div class="card"><div class="step-number">2</div><h3>I explain as I go</h3><p>I will tell you what I am checking and why, without overwhelming you with unnecessary technical details.</p></div><div class="card"><div class="step-number">3</div><h3>I leave things clearer</h3><p>When the visit is finished, the goal is for you to understand what was done and what to do next if the issue returns.</p></div></div></section>
+          <p>You do not need to know the right technical words. You can just tell me what is happening, and I will help you figure out the next step.</p>
 
-    <section><div class="callout-grid"><div class="family-box"><h2 class="section-title">For families helping from afar.</h2><p>If you are trying to help a parent, grandparent, or loved one with technology from another city, I know how stressful that can be.</p><p>With the customer’s permission, I can share a simple visit summary so everyone understands what was fixed, what still needs attention, and what I recommend next.</p><ul><li>Helpful for adult children outside Las Vegas</li><li>Useful after phone, Wi-Fi, printer, or scam concerns</li><li>Simple updates without overwhelming the customer</li></ul></div><div class="boundary-box"><h2 class="section-title">Trust and privacy matter.</h2><p>Technology help can involve personal devices, accounts, photos, emails, and passwords. I treat that seriously.</p><ul><li>I ask before opening accounts, apps, files, or settings</li><li>I do not need your passwords submitted through the website</li><li>I explain why information may be needed before using it</li><li>I focus on solving the problem, not selling unnecessary products</li></ul></div></div></section>
+          <div class="trust-row">
+            <span class="pill">No rushing</span>
+            <span class="pill">No jargon</span>
+            <span class="pill">No judgment</span>
+            <span class="pill">Clear pricing</span>
+            <span class="pill">Professional IT experience</span>
+          </div>
 
-    <section class="split"><div class="boundary-box"><h2 class="section-title">Services intentionally not offered.</h2><p>Friendly Tech Concierge focuses on safe, practical in-home setup, troubleshooting, education, and everyday technology support. To keep the service focused and reliable, I do not provide:</p><ul><li>Phone screen repair</li><li>Laptop screen replacement</li><li>Keyboard replacements</li><li>Board-level repair or soldering</li><li>Complex hardware rebuilds</li></ul></div><div class="service-area"><h2 class="section-title">Serving the Las Vegas Valley.</h2><p>Friendly Tech Concierge serves seniors, retirees, families, and busy professionals throughout Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities.</p><p><strong>Scheduling:</strong> Appointments are available on weekends with limited evening availability. Advance scheduling is recommended.</p></div></section>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="index.html#appointment">Tell Me What You Need Help With</a>
+            <a class="btn btn-secondary" href="tel:7025709003">Call/Text (702) 570-9003</a>
+          </div>
+        </div>
 
-    <section><div style="text-align:center;"><h2 class="section-title">Need honest tech help?</h2><p class="section-intro" style="margin-left:auto;margin-right:auto;">If you are looking for patient support, clear explanations, and technology help without embarrassment, I would be glad to help.</p><div class="hero-buttons" style="justify-content:center;"><a class="btn btn-primary" href="index.html#appointment">Request Help</a><a class="btn btn-secondary" href="tel:7025709003">Call/Text (702) 570-9003</a><a class="btn btn-secondary" href="pricing.html">View Services</a></div></div></section>
+        <aside class="headshot-card">
+          <img src="images/headshot.png" alt="Jontae, founder of Friendly Tech Concierge" />
+          <h2>Jontae — Founder & Tech Concierge</h2>
+          <p>Professional IT Technician serving seniors, retirees, families, and busy households throughout the Las Vegas Valley.</p>
+
+          <div class="mini-trust-list">
+            <div class="mini-trust-item">✓ I explain things in plain English</div>
+            <div class="mini-trust-item">✓ I ask before accessing accounts</div>
+            <div class="mini-trust-item">✓ I can leave written notes after the visit</div>
+            <div class="mini-trust-item">✓ I focus on practical, everyday tech help</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Why I started Friendly Tech Concierge.</h2>
+      <p class="section-intro">Technology support should feel helpful, respectful, and easy to understand. Too often, it does not.</p>
+
+      <div class="split">
+        <div class="boundary-box">
+          <p>I have seen people avoid asking for help because they are afraid of looking foolish. I have seen families lose hours trying to solve simple tech problems. I have seen seniors feel left behind when phones, apps, passwords, and online accounts change faster than anyone explains them.</p>
+
+          <p>Friendly Tech Concierge was created for those moments.</p>
+
+          <p>My goal is to give you a calm, trustworthy person to call when technology gets frustrating, confusing, or overwhelming.</p>
+        </div>
+
+        <div class="warm-box">
+          <h3>The service is built around one simple idea:</h3>
+          <p><strong>You should not have to feel embarrassed just because technology is not working.</strong></p>
+          <p>I will meet you where you are, explain what I am doing, and help you feel more comfortable using the technology already in your home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Who I help.</h2>
+      <p class="section-intro">Friendly Tech Concierge is designed for people who want practical help without being rushed, judged, or talked down to.</p>
+
+      <div class="cards four">
+        <div class="card">
+          <h3>Seniors & Retirees</h3>
+          <p>Patient one-on-one help with phones, tablets, computers, printers, streaming, passwords, and online safety.</p>
+        </div>
+
+        <div class="card">
+          <h3>Adult Children Helping Parents</h3>
+          <p>If your loved one lives in Las Vegas, I can provide trusted in-home help and, with permission, keep you updated.</p>
+        </div>
+
+        <div class="card">
+          <h3>Busy Adults</h3>
+          <p>For people who do not have time to fight with setup, Wi-Fi, printers, apps, smart TVs, or account issues.</p>
+        </div>
+
+        <div class="card">
+          <h3>Non-Technical Households</h3>
+          <p>Friendly support for anyone who wants technology explained clearly and fixed without confusion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="quote-box">
+        <h2 class="section-title">No rushing. No jargon. No judgment.</h2>
+        <p>That is not just a slogan. It is how the appointment should feel. You can ask questions, take notes, slow down, or ask me to explain something again.</p>
+        <div class="hero-buttons" style="justify-content:center;">
+          <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+          <a class="btn btn-secondary" href="pricing.html">View Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What I can help with.</h2>
+      <p class="section-intro">Most visits are everyday technology problems: the things that make life harder when they stop working or stop making sense.</p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Phones, Tablets & Computers</h3>
+          <p>New device setup, app help, updates, slow devices, data transfer, backups, photo organization, and basic training.</p>
+        </div>
+
+        <div class="card">
+          <h3>Wi-Fi, Printers & Smart TVs</h3>
+          <p>Wireless troubleshooting, printer setup, streaming apps, Roku, Fire Stick, smart TV settings, and connection problems.</p>
+        </div>
+
+        <div class="card">
+          <h3>Wearables & Smart Home Devices</h3>
+          <p>Apple Watch, fitness trackers, smart doorbells, cameras, thermostats, speakers, smart plugs, and app-connected devices.</p>
+        </div>
+
+        <div class="card">
+          <h3>Email, Passwords & Safety</h3>
+          <p>Email help, account recovery, password organization, scam prevention, safer sign-in habits, and basic online safety guidance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Technology Lessons</h3>
+          <p>One-on-one guidance for people who want to feel more confident using the devices and apps they already have.</p>
+        </div>
+
+        <div class="card">
+          <h3>Family Tech Checkups</h3>
+          <p>A practical review of devices, accounts, updates, backups, passwords, and common safety concerns around the home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What makes this different.</h2>
+      <p class="section-intro">The visit should feel more personal than a repair ticket and more useful than someone quickly fixing the issue without explaining anything.</p>
+
+      <div class="process">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>I listen first</h3>
+          <p>You can describe the problem in normal words. I will ask questions, confirm what you need, and explain the likely next step.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>I explain as I go</h3>
+          <p>I will tell you what I am checking and why, without overwhelming you with unnecessary technical details.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>I leave things clearer</h3>
+          <p>When the visit is finished, the goal is for you to understand what was done and what to do next if the issue returns.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="callout-grid">
+        <div class="family-box">
+          <h2 class="section-title">For families helping from afar.</h2>
+          <p>If you are trying to help a parent, grandparent, or loved one with technology from another city, I know how stressful that can be.</p>
+          <p>With the customer’s permission, I can share a simple visit summary so everyone understands what was fixed, what still needs attention, and what I recommend next.</p>
+          <ul>
+            <li>Helpful for adult children outside Las Vegas</li>
+            <li>Useful after phone, Wi-Fi, printer, or scam concerns</li>
+            <li>Simple updates without overwhelming the customer</li>
+          </ul>
+        </div>
+
+        <div class="boundary-box">
+          <h2 class="section-title">Trust and privacy matter.</h2>
+          <p>Technology help can involve personal devices, accounts, photos, emails, and passwords. I treat that seriously.</p>
+          <ul>
+            <li>I ask before opening accounts, apps, files, or settings</li>
+            <li>I do not need your passwords submitted through the website</li>
+            <li>I explain why information may be needed before using it</li>
+            <li>I focus on solving the problem, not selling unnecessary products</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="boundary-box">
+        <h2 class="section-title">Services intentionally not offered.</h2>
+        <p>Friendly Tech Concierge focuses on safe, practical in-home setup, troubleshooting, education, and everyday technology support. To keep the service focused and reliable, I do not provide:</p>
+        <ul>
+          <li>Phone screen repair</li>
+          <li>Laptop screen replacement</li>
+          <li>Keyboard replacements</li>
+          <li>Board-level repair or soldering</li>
+          <li>Complex hardware rebuilds</li>
+        </ul>
+      </div>
+
+      <div class="service-area">
+        <h2 class="section-title">Serving the Las Vegas Valley.</h2>
+        <p>Friendly Tech Concierge serves seniors, retirees, families, and busy professionals throughout Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities.</p>
+        <p><strong>Scheduling:</strong> Appointments are available on weekends with limited evening availability. Advance scheduling is recommended.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What happens when you reach out?</h2>
+      <p class="section-intro">The first step is simple. You do not have to diagnose the issue yourself.</p>
+
+      <div class="process">
+        <div class="card">
+          <div class="step-number">1</div>
+          <h3>Tell me what is going on</h3>
+          <p>Call, text, or fill out the request form. A short description is enough.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">2</div>
+          <h3>I ask a few questions</h3>
+          <p>I will confirm the device, the problem, your location, your preferred contact method, and the expected price range.</p>
+        </div>
+
+        <div class="card">
+          <div class="step-number">3</div>
+          <h3>We schedule the visit</h3>
+          <p>If it sounds like a good fit, we choose a time and I let you know what to have ready before I arrive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div style="text-align:center;">
+        <h2 class="section-title">Need honest tech help?</h2>
+        <p class="section-intro" style="margin-left:auto;margin-right:auto;">If you are looking for patient support, clear explanations, and technology help without embarrassment, I would be glad to help.</p>
+        <div class="hero-buttons" style="justify-content:center;">
+          <a class="btn btn-primary" href="index.html#appointment">Request Help</a>
+          <a class="btn btn-secondary" href="tel:7025709003">Call/Text (702) 570-9003</a>
+          <a class="btn btn-secondary" href="pricing.html">View Services</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><p><strong style="color:#fff;">Friendly Tech Concierge</strong></p><p>Las Vegas, Nevada • Call/Text: <a href="tel:7025709003">(702) 570-9003</a> • <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a></p><p>Patient in-home tech support for seniors, retirees, families, and busy households across the Las Vegas Valley.</p></footer>
-  <script src="js/main.js" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About Friendly Tech Concierge","url":"https://friendlytechlv.com/about.html","mainEntity":{"@type":"Person","name":"Jontae","jobTitle":"Founder and Tech Concierge","worksFor":{"@type":"LocalBusiness","name":"Friendly Tech Concierge","telephone":"+17025709003","email":"help@friendlytechlv.com","areaServed":"Las Vegas Valley"}}}</script>
+
+  <footer>
+    <p><strong>Friendly Tech Concierge</strong></p>
+    <p>Las Vegas, Nevada • Call/Text: <a href="tel:7025709003">(702) 570-9003</a> • <a href="mailto:help@friendlytechlv.com">help@friendlytechlv.com</a></p>
+    <p>Patient in-home tech support for seniors, retirees, families, and busy households across the Las Vegas Valley.</p>
+  </footer>
 </body>
 </html>
