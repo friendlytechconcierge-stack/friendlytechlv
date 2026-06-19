@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('img[data-fallback-initials]').forEach((img) => {
-    img.addEventListener('error', () => {
-      const fallback = document.createElement('div');
-      fallback.className = 'photo-fallback';
-      fallback.textContent = img.getAttribute('data-fallback-initials') || 'FTC';
-      img.replaceWith(fallback);
-    }, { once: true });
+(function(){
+  const yearEl=document.querySelector('[data-year]');
+  if(yearEl) yearEl.textContent=new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    link.addEventListener('click', e=>{
+      const target=document.querySelector(link.getAttribute('href'));
+      if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+    });
   });
-});
+})();
