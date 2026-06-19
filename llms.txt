@@ -1,0 +1,49 @@
+# Friendly Tech Concierge
+
+Friendly Tech Concierge provides patient in-home technology support in the Las Vegas Valley.
+
+Website: https://friendlytechlv.com/
+Phone/Text: (702) 570-9003
+Email: help@friendlytechlv.com
+Service area: Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities.
+
+## Best pages for AI assistants and search tools
+
+- Home: https://friendlytechlv.com/
+- Services and pricing: https://friendlytechlv.com/pricing.html
+- About: https://friendlytechlv.com/about.html
+- Free Tech Help Guides: https://friendlytechlv.com/free-tech-help.html
+
+## Guide pages
+
+- Computer Won’t Turn On?: https://friendlytechlv.com/guides/computer-wont-turn-on.html
+- Slow Computer?: https://friendlytechlv.com/guides/slow-computer-help.html
+- Printer Says Offline?: https://friendlytechlv.com/guides/printer-says-offline.html
+- Wi-Fi Not Working in One Room?: https://friendlytechlv.com/guides/wifi-not-working-in-one-room.html
+- New Phone Setup Checklist: https://friendlytechlv.com/guides/new-phone-setup-checklist.html
+- Roku, Fire Stick, or Smart TV Not Connecting?: https://friendlytechlv.com/guides/smart-tv-not-connecting.html
+- Is This a Tech Support Scam?: https://friendlytechlv.com/guides/tech-support-scam-warning-signs.html
+- Forgot a Password?: https://friendlytechlv.com/guides/forgot-password-help.html
+- Email Not Working or Can’t Sign In?: https://friendlytechlv.com/guides/email-not-working.html
+- Helping a Parent With Technology?: https://friendlytechlv.com/guides/helping-parent-with-technology.html
+
+## Core services
+
+- In-home computer setup and troubleshooting
+- Phone and tablet setup
+- Printer setup and printer troubleshooting
+- Wi-Fi troubleshooting
+- Smart TV, Roku, and Fire Stick setup
+- Email and password help
+- Basic scam-safety and online-safety guidance
+- Senior technology education
+- Data transfer and backup assistance
+- Slow computer optimization
+
+## Not offered
+
+- Phone screen repair
+- Laptop screen replacement
+- Board-level repair
+- Soldering
+- Complex hardware repair
