@@ -1,21 +1,26 @@
 # Friendly Tech Concierge Website
 
-Website for Friendly Tech Concierge, a Las Vegas in-home technology support service.
+Low-maintenance website for Friendly Tech Concierge, a limited, appointment-based personal technology assistance service in Las Vegas.
 
 ## Main Pages
 
 - `index.html` — Homepage
 - `about.html` — About page
-- `pricing.html` — Services and pricing
-- `free-tech-help.html` — Free Tech Help guide hub
+- `pricing.html` — Simplified services page (legacy URL retained for search continuity)
+- `request-help.html` — Request-review form
+- `free-tech-help.html` — Archived guide hub, intentionally omitted from primary navigation
 
 ## Guide Pages
 
-Guide articles are stored in the `guides/` folder.
+Guide articles are stored in the `guides/` folder. They are retained as a static archive; there is no ongoing publishing requirement.
 
 ## Assets
 
 Images are stored in the `images/` folder.
+
+## Maintenance
+
+The site is static and has no build step. The request form posts to Formspree. Quarterly, verify the form, phone number, email address, domain/SSL, and primary pages.
 
 ## Notes
 

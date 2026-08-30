@@ -1,49 +1,37 @@
 # Friendly Tech Concierge
 
-Friendly Tech Concierge provides patient in-home technology support in the Las Vegas Valley.
+Friendly Tech Concierge provides straightforward personal technology assistance in the Las Vegas area on a limited, appointment-based basis. Requests are reviewed individually for location, availability, and scope.
 
 Website: https://friendlytechlv.com/
-Phone/Text: (702) 570-9003
+Phone: (702) 570-9003
 Email: help@friendlytechlv.com
-Service area: Las Vegas, Summerlin, Henderson, North Las Vegas, Spring Valley, Enterprise, and nearby communities.
 
-## Best pages for AI assistants and search tools
+## Primary pages
 
 - Home: https://friendlytechlv.com/
-- Services and pricing: https://friendlytechlv.com/pricing.html
+- Services: https://friendlytechlv.com/pricing.html
 - About: https://friendlytechlv.com/about.html
-- Free Tech Help Guides: https://friendlytechlv.com/free-tech-help.html
+- Request Help: https://friendlytechlv.com/request-help.html
 
-## Guide pages
+## Current assistance categories
 
-- Computer Won’t Turn On?: https://friendlytechlv.com/guides/computer-wont-turn-on.html
-- Slow Computer?: https://friendlytechlv.com/guides/slow-computer-help.html
-- Printer Says Offline?: https://friendlytechlv.com/guides/printer-says-offline.html
-- Wi-Fi Not Working in One Room?: https://friendlytechlv.com/guides/wifi-not-working-in-one-room.html
-- New Phone Setup Checklist: https://friendlytechlv.com/guides/new-phone-setup-checklist.html
-- Roku, Fire Stick, or Smart TV Not Connecting?: https://friendlytechlv.com/guides/smart-tv-not-connecting.html
-- Is This a Tech Support Scam?: https://friendlytechlv.com/guides/tech-support-scam-warning-signs.html
-- Forgot a Password?: https://friendlytechlv.com/guides/forgot-password-help.html
-- Email Not Working or Can’t Sign In?: https://friendlytechlv.com/guides/email-not-working.html
-- Helping a Parent With Technology?: https://friendlytechlv.com/guides/helping-parent-with-technology.html
+- Basic new-device setup
+- Everyday consumer technology help
+- Plain-language technology guidance
+- Basic home-device connection where no electrical, structural, licensed, security-system, or specialized installation is required
 
-## Core services
+Availability and service scope are determined only after a request is reviewed. Submission of a request does not create an appointment or guarantee service.
 
-- In-home computer setup and troubleshooting
-- Phone and tablet setup
-- Printer setup and printer troubleshooting
-- Wi-Fi troubleshooting
-- Smart TV, Roku, and Fire Stick setup
-- Email and password help
-- Basic scam-safety and online-safety guidance
-- Senior technology education
-- Data transfer and backup assistance
-- Slow computer optimization
+## Not provided
 
-## Not offered
+- Electrical or structured-cabling work
+- Alarm, surveillance, or security-camera installation
+- Commercial networking, servers, managed IT, or business cybersecurity
+- Guaranteed account or data recovery
+- Specialized hardware repair, soldering, or board-level repair
+- Work requiring contractor licensing, permits, or specialized certification
+- Emergency or around-the-clock support
 
-- Phone screen repair
-- Laptop screen replacement
-- Board-level repair
-- Soldering
-- Complex hardware repair
+## Guide archive
+
+Previously published plain-language guides remain available at https://friendlytechlv.com/free-tech-help.html. They are general educational information and do not expand the current service offering.
